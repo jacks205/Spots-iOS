@@ -9,20 +9,36 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import Moya
 import Moya_ObjectMapper
 
 class SpotsTableViewController: UITableViewController {
     
     var structures : [Structure] = []
+    var provider : SpotsAPIProvider = SpotsProvider
     
+    let activityIndicator = ActivityIndicator()
     let db = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         refreshControl = UIRefreshControl()
-        refreshControl?.addTarget(self, action: #selector(reloadParkingData), forControlEvents: .ValueChanged)
-        reloadParkingData(self)
+        
+        refreshControl!.rx_controlEvent(.ValueChanged)
+        .startWith(())
+        .flatMapLatest { [unowned self] (_) in
+            return self.getParkingDataFromProvider()
+            .trackActivity(self.activityIndicator)
+        }
+        .subscribe { [unowned self] (event) in
+            self.parseNetworkEvent(event)
+        }
+        .addDisposableTo(db)
+        
+        activityIndicator.asObservable()
+        .bindTo(refreshControl!.rx_refreshing)
+        .addDisposableTo(db)
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -42,31 +58,25 @@ class SpotsTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
-    
-    func reloadParkingData(sender : AnyObject) {
-        getParkingData()
-    }
-    
+
     //MARK: - Spots Requests
     
-    private func getParkingData() {
-        let spotsData = SpotsAPI.getSpotsData()
-        spotsData
-            .subscribe({ [weak self] (event) in
-                switch event {
-                case .Next(let spotsResponse):
-                    self?.structures = spotsResponse.structures
-                    self?.tableView.reloadData()
-                    break
-                case .Error(let err):
-                    print(err)
-                    break
-                case .Completed:
-                    break
-                }
-                self?.refreshControl?.endRefreshing()
-                })
-            .addDisposableTo(db)
+    private func getParkingDataFromProvider() -> Observable<SpotsResponse> {
+        return SpotsAPI.getSpotsData(provider)
+    }
+    
+    private func parseNetworkEvent(event : Event<SpotsResponse>) {
+        switch event {
+        case .Next(let res):
+            self.structures = res.structures
+            self.tableView.reloadData()
+            break
+        case .Error(let err):
+            print(err)
+            break
+        case .Completed:
+            break
+        }
     }
     
 }

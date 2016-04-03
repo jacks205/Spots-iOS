@@ -12,16 +12,17 @@ import Moya
 
 class SpotsAPI {
     
-    class func getSpotsData() ->  Observable<SpotsResponse>{
-        return SpotsProvider.request(.Parking)
+    class func getSpotsData(provider : SpotsAPIProvider) ->  Observable<SpotsResponse>{
+        return provider.request(.Parking)
             .mapObject(SpotsResponse)
     }
     
 }
 
 // MARK: - Provider setup
+typealias SpotsAPIProvider = RxMoyaProvider<Spots>
 
-let SpotsProvider = RxMoyaProvider<Spots>()
+let SpotsProvider = SpotsAPIProvider()
 
 // MARK: - Provider support
 

@@ -14,7 +14,7 @@ struct SpotsResponse: Mappable {
     var structures : [Structure]!
     var lastUpdated : String!
     var lastUpdatedISO : String!
-    var _id : String!
+    var id : String!
     
     var lastUpdatedDate : NSDate? {
         let dateFormatter: NSDateFormatter = NSDateFormatter()
@@ -30,7 +30,7 @@ struct SpotsResponse: Mappable {
         structures <- map["structures"]
         lastUpdated <- map["lastUpdated"]
         lastUpdatedISO <- map["lastUpdatedISO"]
-        _id <- map["_id"]
+        id <- map["_id"]
     }
     
 }

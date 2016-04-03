@@ -17,6 +17,7 @@
 		EA06CD291CAE008D007F5851 /* SpotsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA06CD281CAE008D007F5851 /* SpotsTableViewController.swift */; };
 		EA06CD2D1CAE7A53007F5851 /* SpotsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA06CD2C1CAE7A53007F5851 /* SpotsAPI.swift */; };
 		EA06CD311CAE7F5B007F5851 /* SpotsResponseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA06CD301CAE7F5B007F5851 /* SpotsResponseModels.swift */; };
+		EA2A92781CAEF49D00DAC302 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2A92771CAEF49D00DAC302 /* ActivityIndicator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		EA06CD2C1CAE7A53007F5851 /* SpotsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotsAPI.swift; path = Network/SpotsAPI.swift; sourceTree = "<group>"; };
 		EA06CD2E1CAE7C89007F5851 /* Spots-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Spots-Bridging-Header.h"; sourceTree = "<group>"; };
 		EA06CD301CAE7F5B007F5851 /* SpotsResponseModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotsResponseModels.swift; path = Models/SpotsResponseModels.swift; sourceTree = "<group>"; };
+		EA2A92771CAEF49D00DAC302 /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 				EA06CD031CADF811007F5851 /* Info.plist */,
 				EA06CD261CADF9E6007F5851 /* Spots-Prefix.pch */,
 				EA06CD2E1CAE7C89007F5851 /* Spots-Bridging-Header.h */,
+				EA2A92771CAEF49D00DAC302 /* ActivityIndicator.swift */,
 			);
 			name = "Support Files";
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA06CD291CAE008D007F5851 /* SpotsTableViewController.swift in Sources */,
+				EA2A92781CAEF49D00DAC302 /* ActivityIndicator.swift in Sources */,
 				EA06CCF81CADF811007F5851 /* AppDelegate.swift in Sources */,
 				EA06CD2D1CAE7A53007F5851 /* SpotsAPI.swift in Sources */,
 				EA06CD311CAE7F5B007F5851 /* SpotsResponseModels.swift in Sources */,
