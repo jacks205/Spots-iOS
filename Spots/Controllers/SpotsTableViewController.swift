@@ -17,6 +17,7 @@ class SpotsTableViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var structures : Variable<[Structure]> = Variable([])
+    var refreshControl : UIRefreshControl?
     var provider : SpotsAPIProvider = SpotsProvider
     
     let activityIndicator = ActivityIndicator()
@@ -24,7 +25,6 @@ class SpotsTableViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         if let smallerFont = UIFont(name: "OpenSans", size: 11) {
             title = "PARKING STRUCTURES"
             navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: smallerFont, NSForegroundColorAttributeName: UIColor(red: 1, green: 1, blue: 1, alpha: 0.48)]
@@ -56,9 +56,9 @@ class SpotsTableViewController: UIViewController {
     }
     
     private func setupRefreshControl() {
-        let refreshControl = UIRefreshControl()
+        refreshControl = UIRefreshControl()
         
-        refreshControl.rx_controlEvent(.ValueChanged)
+        refreshControl?.rx_controlEvent(.ValueChanged)
             .startWith(())
             .flatMapLatest { [unowned self] (_) in
                 return self.getParkingDataFromProvider()
@@ -70,10 +70,10 @@ class SpotsTableViewController: UIViewController {
             .addDisposableTo(db)
         
         activityIndicator.asObservable()
-            .bindTo(refreshControl.rx_refreshing)
+            .bindTo(refreshControl!.rx_refreshing)
             .addDisposableTo(db)
         
-        tableView.addSubview(refreshControl)
+        tableView.insertSubview(refreshControl!, atIndex: 0)
     }
 
     //MARK: - Spots Requests
@@ -86,6 +86,7 @@ class SpotsTableViewController: UIViewController {
         switch event {
         case .Next(let res):
             self.structures.value = res.structures
+            self.refreshControl?.attributedTitle = self.getLastUpdatedAttributedString("Updated " + timeAgoSinceDate(res.lastUpdatedDate!, numericDates: true))
             break
         case .Error(let err):
             print(err)
@@ -93,6 +94,16 @@ class SpotsTableViewController: UIViewController {
         case .Completed:
             break
         }
+    }
+    
+    //MARK: - Helper Methods
+    private func getLastUpdatedAttributedString(string : String) -> NSAttributedString {
+        return NSAttributedString(string: string, attributes:
+            [
+                NSFontAttributeName: UIFont(name: "OpenSans", size: 11)!,
+                NSForegroundColorAttributeName: UIColor(red: 1, green: 1, blue: 1, alpha: 0.48)
+            ]
+        )
     }
     
 }

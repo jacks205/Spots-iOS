@@ -16,7 +16,6 @@ PODS:
     - Moya/Core
     - RxSwift (~> 2.0)
   - ObjectMapper (1.2.0)
-  - OpenSans (1.0.3)
   - Result (1.0.2)
   - RxCocoa (2.3.1):
     - RxSwift (~> 2.3.1)
@@ -24,7 +23,6 @@ PODS:
 
 DEPENDENCIES:
   - Moya-ObjectMapper/RxSwift (= 1.2)
-  - OpenSans
   - RxCocoa (= 2.3.1)
   - RxSwift
 
@@ -33,7 +31,6 @@ SPEC CHECKSUMS:
   Moya: 852e26948a3771355ddf0f0109ac779b6fc30f28
   Moya-ObjectMapper: 565c1e9e1e79bdf72e18fa8fa01a0741d042fa34
   ObjectMapper: b1e9c7c8a9f6400b72690c80072c131504caa66f
-  OpenSans: 33078846463eae780aa5f82986b51cce085f970d
   Result: dd3dd71af3fa2e262f1a999e14fba2c25ec14f16
   RxCocoa: a2baaf3462b989559a51dce59d78fbebb8fe0afa
   RxSwift: 829b2843e9eddc77a02cb3f5117f0d55f8f646f1

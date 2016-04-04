@@ -27,7 +27,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="158" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qZK-zT-6a5">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.086274509803921567" green="0.10980392156862745" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="separatorColor" white="1" alpha="0.22" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
@@ -118,7 +118,7 @@
                                                     </cells>
                                                 </collectionView>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="0.086274509803921567" green="0.10980392156862745" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstItem="7DL-KI-GNb" firstAttribute="top" secondItem="YYH-kH-kPO" secondAttribute="topMargin" id="Q2H-dg-TLd"/>
                                                 <constraint firstItem="9z7-K9-Oh4" firstAttribute="leading" secondItem="YYH-kH-kPO" secondAttribute="leadingMargin" constant="6" id="QGg-Mh-9nJ"/>
@@ -130,7 +130,7 @@
                                                 <constraint firstItem="Sp9-4H-IDg" firstAttribute="leading" secondItem="YYH-kH-kPO" secondAttribute="leadingMargin" constant="6" id="lew-lo-jMg"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="0.086274509803921567" green="0.10980392156862745" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="collectionView" destination="9z7-K9-Oh4" id="1ag-Th-Gct"/>
                                             <outlet property="title" destination="7DL-KI-GNb" id="MZ9-f5-gLA"/>
