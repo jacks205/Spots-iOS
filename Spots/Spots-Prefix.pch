@@ -1,0 +1,17 @@
+//
+//  Spots-Prefix.pch
+//  Spots
+//
+//  Created by Mark Jackson on 3/31/16.
+//  Copyright © 2016 Mark Jackson. All rights reserved.
+//
+
+#ifndef Spots_Prefix_pch
+#define Spots_Prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "SpotsConfiguration.h"
+
+#endif /* Spots_Prefix_pch */

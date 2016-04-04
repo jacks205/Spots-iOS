@@ -4,6 +4,7 @@ platform :ios, '9.0'
 use_frameworks!
 
 target 'Spots' do
+pod 'OpenSans'
 pod 'RxSwift'
 pod 'Moya-ObjectMapper/RxSwift', '1.2'
 pod 'RxCocoa', '2.3.1'

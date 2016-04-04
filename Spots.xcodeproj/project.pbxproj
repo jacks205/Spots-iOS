@@ -18,6 +18,27 @@
 		EA06CD2D1CAE7A53007F5851 /* SpotsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA06CD2C1CAE7A53007F5851 /* SpotsAPI.swift */; };
 		EA06CD311CAE7F5B007F5851 /* SpotsResponseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA06CD301CAE7F5B007F5851 /* SpotsResponseModels.swift */; };
 		EA2A92781CAEF49D00DAC302 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2A92771CAEF49D00DAC302 /* ActivityIndicator.swift */; };
+		EA2A927A1CB1F1F100DAC302 /* SpotsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2A92791CB1F1F100DAC302 /* SpotsTableViewCell.swift */; };
+		EA2A927C1CB1F26900DAC302 /* SchoolSelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA2A927B1CB1F26900DAC302 /* SchoolSelection.storyboard */; };
+		EA2A927E1CB1F2F900DAC302 /* SpotsSchoolSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2A927D1CB1F2F900DAC302 /* SpotsSchoolSelectionViewController.swift */; };
+		EA2A92811CB240ED00DAC302 /* SpotsAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2A92801CB240ED00DAC302 /* SpotsAppearance.swift */; };
+		EA2A92861CB2654700DAC302 /* SpotsCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2A92851CB2654700DAC302 /* SpotsCircleView.swift */; };
+		EA2A92881CB2670F00DAC302 /* SpotsCircleDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA2A92871CB2670F00DAC302 /* SpotsCircleDataView.xib */; };
+		EAD96ED01CB2849500E1BF73 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EAD96EC61CB2849500E1BF73 /* OpenSans-Bold.ttf */; };
+		EAD96ED11CB2849500E1BF73 /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EAD96EC71CB2849500E1BF73 /* OpenSans-BoldItalic.ttf */; };
+		EAD96ED21CB2849500E1BF73 /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EAD96EC81CB2849500E1BF73 /* OpenSans-ExtraBold.ttf */; };
+		EAD96ED31CB2849500E1BF73 /* OpenSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EAD96EC91CB2849500E1BF73 /* OpenSans-ExtraBoldItalic.ttf */; };
+		EAD96ED41CB2849500E1BF73 /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EAD96ECA1CB2849500E1BF73 /* OpenSans-Italic.ttf */; };
+		EAD96ED51CB2849500E1BF73 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EAD96ECB1CB2849500E1BF73 /* OpenSans-Light.ttf */; };
+		EAD96ED61CB2849500E1BF73 /* OpenSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EAD96ECC1CB2849500E1BF73 /* OpenSans-LightItalic.ttf */; };
+		EAD96ED71CB2849500E1BF73 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EAD96ECD1CB2849500E1BF73 /* OpenSans-Regular.ttf */; };
+		EAD96ED81CB2849500E1BF73 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EAD96ECE1CB2849500E1BF73 /* OpenSans-Semibold.ttf */; };
+		EAD96ED91CB2849500E1BF73 /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EAD96ECF1CB2849500E1BF73 /* OpenSans-SemiboldItalic.ttf */; };
+		EAD96EDB1CB285B500E1BF73 /* SpotsSchoolTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD96EDA1CB285B500E1BF73 /* SpotsSchoolTableViewCell.swift */; };
+		EAD96EDD1CB285E400E1BF73 /* EmptyCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD96EDC1CB285E400E1BF73 /* EmptyCircleView.swift */; };
+		EAD96EDF1CB2862300E1BF73 /* SpotsCircleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD96EDE1CB2862300E1BF73 /* SpotsCircleCollectionViewCell.swift */; };
+		EAD96EE11CB2865100E1BF73 /* SpotsCircleDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD96EE01CB2865100E1BF73 /* SpotsCircleDataView.swift */; };
+		EAD96EE31CB2867500E1BF73 /* SpotsIndexedCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD96EE21CB2867500E1BF73 /* SpotsIndexedCollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +80,28 @@
 		EA06CD2E1CAE7C89007F5851 /* Spots-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Spots-Bridging-Header.h"; sourceTree = "<group>"; };
 		EA06CD301CAE7F5B007F5851 /* SpotsResponseModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotsResponseModels.swift; path = Models/SpotsResponseModels.swift; sourceTree = "<group>"; };
 		EA2A92771CAEF49D00DAC302 /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		EA2A92791CB1F1F100DAC302 /* SpotsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotsTableViewCell.swift; path = Views/SpotsTableViewCell.swift; sourceTree = "<group>"; };
+		EA2A927B1CB1F26900DAC302 /* SchoolSelection.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SchoolSelection.storyboard; path = Views/SchoolSelection.storyboard; sourceTree = "<group>"; };
+		EA2A927D1CB1F2F900DAC302 /* SpotsSchoolSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotsSchoolSelectionViewController.swift; path = Views/SpotsSchoolSelectionViewController.swift; sourceTree = "<group>"; };
+		EA2A927F1CB2244F00DAC302 /* SpotsConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpotsConfiguration.h; sourceTree = "<group>"; };
+		EA2A92801CB240ED00DAC302 /* SpotsAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotsAppearance.swift; sourceTree = "<group>"; };
+		EA2A92851CB2654700DAC302 /* SpotsCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotsCircleView.swift; path = Views/SpotsCircleView.swift; sourceTree = "<group>"; };
+		EA2A92871CB2670F00DAC302 /* SpotsCircleDataView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SpotsCircleDataView.xib; path = Views/SpotsCircleDataView.xib; sourceTree = "<group>"; };
+		EAD96EC61CB2849500E1BF73 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Bold.ttf"; path = "Fonts/OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		EAD96EC71CB2849500E1BF73 /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-BoldItalic.ttf"; path = "Fonts/OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		EAD96EC81CB2849500E1BF73 /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-ExtraBold.ttf"; path = "Fonts/OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		EAD96EC91CB2849500E1BF73 /* OpenSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-ExtraBoldItalic.ttf"; path = "Fonts/OpenSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		EAD96ECA1CB2849500E1BF73 /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Italic.ttf"; path = "Fonts/OpenSans-Italic.ttf"; sourceTree = "<group>"; };
+		EAD96ECB1CB2849500E1BF73 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Light.ttf"; path = "Fonts/OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		EAD96ECC1CB2849500E1BF73 /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-LightItalic.ttf"; path = "Fonts/OpenSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		EAD96ECD1CB2849500E1BF73 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Regular.ttf"; path = "Fonts/OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		EAD96ECE1CB2849500E1BF73 /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Semibold.ttf"; path = "Fonts/OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
+		EAD96ECF1CB2849500E1BF73 /* OpenSans-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-SemiboldItalic.ttf"; path = "Fonts/OpenSans-SemiboldItalic.ttf"; sourceTree = "<group>"; };
+		EAD96EDA1CB285B500E1BF73 /* SpotsSchoolTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotsSchoolTableViewCell.swift; path = Views/SpotsSchoolTableViewCell.swift; sourceTree = "<group>"; };
+		EAD96EDC1CB285E400E1BF73 /* EmptyCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmptyCircleView.swift; path = Views/EmptyCircleView.swift; sourceTree = "<group>"; };
+		EAD96EDE1CB2862300E1BF73 /* SpotsCircleCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotsCircleCollectionViewCell.swift; path = Views/SpotsCircleCollectionViewCell.swift; sourceTree = "<group>"; };
+		EAD96EE01CB2865100E1BF73 /* SpotsCircleDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotsCircleDataView.swift; path = Views/SpotsCircleDataView.swift; sourceTree = "<group>"; };
+		EAD96EE21CB2867500E1BF73 /* SpotsIndexedCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotsIndexedCollectionView.swift; path = Views/SpotsIndexedCollectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,11 +172,11 @@
 		EA06CCF61CADF811007F5851 /* Spots */ = {
 			isa = PBXGroup;
 			children = (
+				EA06CCF71CADF811007F5851 /* AppDelegate.swift */,
 				EA06CD2F1CAE7F03007F5851 /* Models */,
 				EA06CD2B1CAE7A37007F5851 /* Network */,
 				EA06CD2A1CAE009F007F5851 /* Views */,
 				EA06CD271CADFFFA007F5851 /* Controllers */,
-				EA06CCF71CADF811007F5851 /* AppDelegate.swift */,
 				EA06CD251CADF985007F5851 /* Support Files */,
 			);
 			path = Spots;
@@ -160,11 +203,14 @@
 		EA06CD251CADF985007F5851 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				EAD96EC51CB2846200E1BF73 /* Fonts */,
 				EA06CCFE1CADF811007F5851 /* Assets.xcassets */,
 				EA06CD031CADF811007F5851 /* Info.plist */,
 				EA06CD261CADF9E6007F5851 /* Spots-Prefix.pch */,
 				EA06CD2E1CAE7C89007F5851 /* Spots-Bridging-Header.h */,
 				EA2A92771CAEF49D00DAC302 /* ActivityIndicator.swift */,
+				EA2A927F1CB2244F00DAC302 /* SpotsConfiguration.h */,
+				EA2A92801CB240ED00DAC302 /* SpotsAppearance.swift */,
 			);
 			name = "Support Files";
 			sourceTree = "<group>";
@@ -173,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				EA06CD281CAE008D007F5851 /* SpotsTableViewController.swift */,
+				EA2A927D1CB1F2F900DAC302 /* SpotsSchoolSelectionViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -182,6 +229,15 @@
 			children = (
 				EA06CCFB1CADF811007F5851 /* Main.storyboard */,
 				EA06CD001CADF811007F5851 /* LaunchScreen.storyboard */,
+				EA2A92791CB1F1F100DAC302 /* SpotsTableViewCell.swift */,
+				EA2A927B1CB1F26900DAC302 /* SchoolSelection.storyboard */,
+				EA2A92851CB2654700DAC302 /* SpotsCircleView.swift */,
+				EA2A92871CB2670F00DAC302 /* SpotsCircleDataView.xib */,
+				EAD96EDA1CB285B500E1BF73 /* SpotsSchoolTableViewCell.swift */,
+				EAD96EDC1CB285E400E1BF73 /* EmptyCircleView.swift */,
+				EAD96EDE1CB2862300E1BF73 /* SpotsCircleCollectionViewCell.swift */,
+				EAD96EE01CB2865100E1BF73 /* SpotsCircleDataView.swift */,
+				EAD96EE21CB2867500E1BF73 /* SpotsIndexedCollectionView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -202,6 +258,23 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		EAD96EC51CB2846200E1BF73 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				EAD96EC61CB2849500E1BF73 /* OpenSans-Bold.ttf */,
+				EAD96EC71CB2849500E1BF73 /* OpenSans-BoldItalic.ttf */,
+				EAD96EC81CB2849500E1BF73 /* OpenSans-ExtraBold.ttf */,
+				EAD96EC91CB2849500E1BF73 /* OpenSans-ExtraBoldItalic.ttf */,
+				EAD96ECA1CB2849500E1BF73 /* OpenSans-Italic.ttf */,
+				EAD96ECB1CB2849500E1BF73 /* OpenSans-Light.ttf */,
+				EAD96ECC1CB2849500E1BF73 /* OpenSans-LightItalic.ttf */,
+				EAD96ECD1CB2849500E1BF73 /* OpenSans-Regular.ttf */,
+				EAD96ECE1CB2849500E1BF73 /* OpenSans-Semibold.ttf */,
+				EAD96ECF1CB2849500E1BF73 /* OpenSans-SemiboldItalic.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -215,6 +288,7 @@
 				EA06CCF21CADF811007F5851 /* Resources */,
 				9662425182E12D3CBC96F2F5 /* Embed Pods Frameworks */,
 				B21149D86FC15C9BC4D4493B /* Copy Pods Resources */,
+				EA2A92821CB2509F00DAC302 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -311,8 +385,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA06CD021CADF811007F5851 /* LaunchScreen.storyboard in Resources */,
+				EAD96ED91CB2849500E1BF73 /* OpenSans-SemiboldItalic.ttf in Resources */,
+				EAD96ED31CB2849500E1BF73 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
+				EAD96ED61CB2849500E1BF73 /* OpenSans-LightItalic.ttf in Resources */,
 				EA06CCFF1CADF811007F5851 /* Assets.xcassets in Resources */,
+				EAD96ED41CB2849500E1BF73 /* OpenSans-Italic.ttf in Resources */,
+				EAD96ED01CB2849500E1BF73 /* OpenSans-Bold.ttf in Resources */,
+				EAD96ED21CB2849500E1BF73 /* OpenSans-ExtraBold.ttf in Resources */,
+				EAD96ED11CB2849500E1BF73 /* OpenSans-BoldItalic.ttf in Resources */,
+				EA2A92881CB2670F00DAC302 /* SpotsCircleDataView.xib in Resources */,
 				EA06CCFD1CADF811007F5851 /* Main.storyboard in Resources */,
+				EAD96ED51CB2849500E1BF73 /* OpenSans-Light.ttf in Resources */,
+				EAD96ED71CB2849500E1BF73 /* OpenSans-Regular.ttf in Resources */,
+				EAD96ED81CB2849500E1BF73 /* OpenSans-Semibold.ttf in Resources */,
+				EA2A927C1CB1F26900DAC302 /* SchoolSelection.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,6 +464,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Spots/Pods-Spots-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		EA2A92821CB2509F00DAC302 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -385,9 +484,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA2A92861CB2654700DAC302 /* SpotsCircleView.swift in Sources */,
 				EA06CD291CAE008D007F5851 /* SpotsTableViewController.swift in Sources */,
+				EAD96EE31CB2867500E1BF73 /* SpotsIndexedCollectionView.swift in Sources */,
+				EA2A92811CB240ED00DAC302 /* SpotsAppearance.swift in Sources */,
+				EAD96EDB1CB285B500E1BF73 /* SpotsSchoolTableViewCell.swift in Sources */,
+				EA2A927A1CB1F1F100DAC302 /* SpotsTableViewCell.swift in Sources */,
+				EAD96EDD1CB285E400E1BF73 /* EmptyCircleView.swift in Sources */,
 				EA2A92781CAEF49D00DAC302 /* ActivityIndicator.swift in Sources */,
+				EAD96EE11CB2865100E1BF73 /* SpotsCircleDataView.swift in Sources */,
 				EA06CCF81CADF811007F5851 /* AppDelegate.swift in Sources */,
+				EAD96EDF1CB2862300E1BF73 /* SpotsCircleCollectionViewCell.swift in Sources */,
+				EA2A927E1CB1F2F900DAC302 /* SpotsSchoolSelectionViewController.swift in Sources */,
 				EA06CD2D1CAE7A53007F5851 /* SpotsAPI.swift in Sources */,
 				EA06CD311CAE7F5B007F5851 /* SpotsResponseModels.swift in Sources */,
 			);
@@ -485,6 +593,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-DDEBUG";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "$SRCROOT/Spots/Spots-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -525,6 +634,7 @@
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_SWIFT_FLAGS = "-DRELEASE";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "$SRCROOT/Spots/Spots-Bridging-Header.h";
 				VALIDATE_PRODUCT = YES;

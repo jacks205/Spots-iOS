@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="9A2-H7-dZv">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
+            <string>OpenSans</string>
+            <string>OpenSans</string>
+        </mutableArray>
+        <mutableArray key="OpenSans-Semibold.ttf">
+            <string>OpenSans-Semibold</string>
+        </mutableArray>
+    </customFonts>
+    <scenes>
+        <!--SchoolSelectionViewController-->
+        <scene sceneID="ld8-vI-54y">
+            <objects>
+                <viewController storyboardIdentifier="SchoolSelectionViewController" title="SchoolSelectionViewController" id="Nct-nC-c2g" customClass="SpotsSchoolSelectionViewController" customModule="Spots" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qCJ-Zg-DcN"/>
+                        <viewControllerLayoutGuide type="bottom" id="l1H-IL-Rnv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Csg-Vy-C0D">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sc7-vO-E6I">
+                                <rect key="frame" x="0.0" y="137" width="320" height="153"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SchoolCell" rowHeight="46" id="cwG-Fe-PHd" customClass="SpotsSchoolTableViewCell" customModule="Spots" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="46"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cwG-Fe-PHd" id="LYd-gs-ssh">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="46"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty" highlightedImage="check" translatesAutoresizingMaskIntoConstraints="NO" id="KAD-60-I2C">
+                                                    <rect key="frame" x="283" y="8" width="29" height="29"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="KAD-60-I2C" secondAttribute="height" multiplier="1:1" id="g1L-9I-zuJ"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chapman University" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m9N-Fw-x7D">
+                                                    <rect key="frame" x="12" y="8" width="147" height="30"/>
+                                                    <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15.5"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="m9N-Fw-x7D" firstAttribute="bottom" secondItem="LYd-gs-ssh" secondAttribute="bottomMargin" id="32C-Vg-T1V"/>
+                                                <constraint firstItem="m9N-Fw-x7D" firstAttribute="top" secondItem="LYd-gs-ssh" secondAttribute="topMargin" id="6dq-f7-xne"/>
+                                                <constraint firstItem="KAD-60-I2C" firstAttribute="trailing" secondItem="LYd-gs-ssh" secondAttribute="trailingMargin" id="7IE-WI-KBY"/>
+                                                <constraint firstItem="m9N-Fw-x7D" firstAttribute="leading" secondItem="LYd-gs-ssh" secondAttribute="leadingMargin" constant="4" id="U6i-a6-nXX"/>
+                                                <constraint firstItem="KAD-60-I2C" firstAttribute="top" secondItem="LYd-gs-ssh" secondAttribute="topMargin" id="eSl-cm-Gdr"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="KAD-60-I2C" secondAttribute="bottom" constant="1" id="soX-3e-oOT"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="schoolTextLabel" destination="m9N-Fw-x7D" id="HES-Pi-yLj"/>
+                                            <outlet property="selectedImageView" destination="KAD-60-I2C" id="BA2-dm-fWQ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Spots" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YY1-5a-kH1">
+                                <rect key="frame" x="53" y="45" width="214" height="33"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RME-xU-RoP">
+                                <rect key="frame" x="0.0" y="517" width="320" height="51"/>
+                                <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="ygC-Hk-LDH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="12"/>
+                                <state key="normal" title="LET'S GO">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please choose a location." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NUL-hM-wPk">
+                                <rect key="frame" x="57" y="78" width="206" height="22"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15.5"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.086274509803921567" green="0.10980392156862745" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="NUL-hM-wPk" secondAttribute="trailing" constant="41" id="1Fp-hb-pnb"/>
+                            <constraint firstAttribute="trailing" secondItem="sc7-vO-E6I" secondAttribute="trailing" id="L31-PM-5ba"/>
+                            <constraint firstItem="RME-xU-RoP" firstAttribute="trailing" secondItem="sc7-vO-E6I" secondAttribute="trailing" id="MVu-zz-cxt"/>
+                            <constraint firstItem="sc7-vO-E6I" firstAttribute="leading" secondItem="Csg-Vy-C0D" secondAttribute="leading" id="ROR-xZ-YYc"/>
+                            <constraint firstItem="sc7-vO-E6I" firstAttribute="top" secondItem="NUL-hM-wPk" secondAttribute="bottom" constant="37" id="RaT-Gm-6ma"/>
+                            <constraint firstItem="NUL-hM-wPk" firstAttribute="leading" secondItem="Csg-Vy-C0D" secondAttribute="leadingMargin" constant="41" id="TBF-9A-ntU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YY1-5a-kH1" secondAttribute="trailing" constant="37" id="WcY-NO-oVX"/>
+                            <constraint firstItem="YY1-5a-kH1" firstAttribute="top" secondItem="qCJ-Zg-DcN" secondAttribute="bottom" constant="25" id="Zg2-Nz-qSK"/>
+                            <constraint firstItem="RME-xU-RoP" firstAttribute="leading" secondItem="sc7-vO-E6I" secondAttribute="leading" id="a6W-Oc-7Ls"/>
+                            <constraint firstItem="YY1-5a-kH1" firstAttribute="leading" secondItem="Csg-Vy-C0D" secondAttribute="leadingMargin" constant="37" id="aXb-cW-xrb"/>
+                            <constraint firstItem="NUL-hM-wPk" firstAttribute="top" secondItem="YY1-5a-kH1" secondAttribute="bottom" id="dng-oP-NZp"/>
+                            <constraint firstItem="RME-xU-RoP" firstAttribute="bottom" secondItem="l1H-IL-Rnv" secondAttribute="top" id="pyI-GA-ezb"/>
+                            <constraint firstItem="l1H-IL-Rnv" firstAttribute="top" secondItem="sc7-vO-E6I" secondAttribute="bottom" constant="278" id="yNC-NW-H8h"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="xEC-rd-mgN"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <connections>
+                        <outlet property="letsGoButton" destination="RME-xU-RoP" id="r8s-DR-dkq"/>
+                        <outlet property="tableView" destination="sc7-vO-E6I" id="SVO-9M-C11"/>
+                        <segue destination="P3X-7E-jpX" kind="push" identifier="choseSchool" id="uua-tN-Lcw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VCP-T8-ckF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="722" y="258"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="SpL-3B-6NH">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="P3X-7E-jpX" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="UOu-VP-5Ki"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hYw-HG-c0r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1249" y="258"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fO5-NN-HAL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="9A2-H7-dZv" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Kui-yn-GjK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.086274509803921567" green="0.10980392156862745" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.086274509803921567" green="0.10980392156862745" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Nct-nC-c2g" kind="relationship" relationship="rootViewController" id="TSf-hs-aLd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FKZ-lT-1Eo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="190" y="258"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="check" width="29" height="29"/>
+        <image name="empty" width="29" height="29"/>
+    </resources>
+</document>

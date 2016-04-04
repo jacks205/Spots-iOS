@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
+        </mutableArray>
+        <mutableArray key="OpenSans-Semibold.ttf">
+            <string>OpenSans-Semibold</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SpotsCircleDataView" customModule="Spots" customModuleProvider="target">
+            <connections>
+                <outlet property="countLabel" destination="2aB-pn-pOr" id="Rdu-wE-ubb"/>
+                <outlet property="spotsCircleView" destination="edU-fX-oc1" id="nyU-Bq-IDf"/>
+                <outlet property="titleLabel" destination="34b-4f-X2K" id="1fB-Ya-2Uz"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="des-od-NO4">
+            <rect key="frame" x="0.0" y="0.0" width="50" height="84"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="edU-fX-oc1" customClass="SpotsCircleView" customModule="Spots" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="edU-fX-oc1" secondAttribute="height" multiplier="1:1" id="yab-Ns-qLB"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="LEVEL 9" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34b-4f-X2K">
+                    <rect key="frame" x="0.0" y="55" width="50" height="14"/>
+                    <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="10"/>
+                    <color key="textColor" white="1" alpha="0.81999999999999995" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="999" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2aB-pn-pOr">
+                    <rect key="frame" x="0.0" y="67" width="50" height="17"/>
+                    <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="12"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="edU-fX-oc1" secondAttribute="trailing" id="EpC-ak-OcM"/>
+                <constraint firstItem="edU-fX-oc1" firstAttribute="trailing" secondItem="34b-4f-X2K" secondAttribute="trailing" id="GDx-eH-nsk"/>
+                <constraint firstItem="edU-fX-oc1" firstAttribute="leading" secondItem="des-od-NO4" secondAttribute="leading" id="HGO-bk-EHY"/>
+                <constraint firstItem="2aB-pn-pOr" firstAttribute="top" secondItem="34b-4f-X2K" secondAttribute="bottom" constant="-2" id="J3M-kG-2Ho"/>
+                <constraint firstItem="34b-4f-X2K" firstAttribute="leading" secondItem="2aB-pn-pOr" secondAttribute="leading" id="THB-pi-zbg"/>
+                <constraint firstItem="edU-fX-oc1" firstAttribute="leading" secondItem="34b-4f-X2K" secondAttribute="leading" id="Uh7-OP-hwc"/>
+                <constraint firstItem="34b-4f-X2K" firstAttribute="trailing" secondItem="2aB-pn-pOr" secondAttribute="trailing" id="VdR-Ed-blh"/>
+                <constraint firstItem="edU-fX-oc1" firstAttribute="top" secondItem="des-od-NO4" secondAttribute="top" id="ekA-JI-NZ5"/>
+                <constraint firstItem="34b-4f-X2K" firstAttribute="top" secondItem="edU-fX-oc1" secondAttribute="bottom" constant="5" id="kLb-Hz-dQj"/>
+                <constraint firstAttribute="bottom" secondItem="2aB-pn-pOr" secondAttribute="bottom" id="trq-Un-dxn"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="458" y="328"/>
+        </view>
+    </objects>
+</document>

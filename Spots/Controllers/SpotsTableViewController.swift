@@ -12,9 +12,11 @@ import RxCocoa
 import Moya
 import Moya_ObjectMapper
 
-class SpotsTableViewController: UITableViewController {
+class SpotsTableViewController: UIViewController {
     
-    var structures : [Structure] = []
+    @IBOutlet weak var tableView: UITableView!
+    
+    var structures : Variable<[Structure]> = Variable([])
     var provider : SpotsAPIProvider = SpotsProvider
     
     let activityIndicator = ActivityIndicator()
@@ -23,40 +25,55 @@ class SpotsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        refreshControl = UIRefreshControl()
+        if let smallerFont = UIFont(name: "OpenSans", size: 11) {
+            title = "PARKING STRUCTURES"
+            navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: smallerFont, NSForegroundColorAttributeName: UIColor(red: 1, green: 1, blue: 1, alpha: 0.48)]
+        }
         
-        refreshControl!.rx_controlEvent(.ValueChanged)
-        .startWith(())
-        .flatMapLatest { [unowned self] (_) in
-            return self.getParkingDataFromProvider()
-            .trackActivity(self.activityIndicator)
-        }
-        .subscribe { [unowned self] (event) in
-            self.parseNetworkEvent(event)
-        }
-        .addDisposableTo(db)
+        view.backgroundColor = SpotsAppearance.Background
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+        navigationController?.navigationBar.translucent = false
+        navigationItem.setHidesBackButton(true, animated: false)
+        navigationController?.setNavigationBarHidden(false, animated: true)
+            
+        setupTableView()
+        setupRefreshControl()
+    }
+    
+    private func setupTableView() {
+        tableView
+            .rx_setDelegate(self)
+            .addDisposableTo(db)
+        
+        structures.asObservable()
+            .bindTo(tableView.rx_itemsWithCellIdentifier("Cell", cellType: SpotsTableViewCell.self)) { (row, structure, cell) in
+                cell.selectionStyle = .None
+                cell.title.text = structure.name.capitalizedString
+                cell.totalSpots.text = "\(structure.available) spots available"
+            }
+            .addDisposableTo(db)
+    }
+    
+    private func setupRefreshControl() {
+        let refreshControl = UIRefreshControl()
+        
+        refreshControl.rx_controlEvent(.ValueChanged)
+            .startWith(())
+            .flatMapLatest { [unowned self] (_) in
+                return self.getParkingDataFromProvider()
+                    .trackActivity(self.activityIndicator)
+            }
+            .subscribe { [unowned self] (event) in
+                self.parseNetworkEvent(event)
+            }
+            .addDisposableTo(db)
         
         activityIndicator.asObservable()
-        .bindTo(refreshControl!.rx_refreshing)
-        .addDisposableTo(db)
-    }
-    
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+            .bindTo(refreshControl.rx_refreshing)
+            .addDisposableTo(db)
         
-        let structure = structures[indexPath.row]
-        
-        cell.textLabel?.text = structure.name
-        
-        return cell
-    }
-    
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return structures.count
-    }
-    
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        tableView.addSubview(refreshControl)
     }
 
     //MARK: - Spots Requests
@@ -68,8 +85,7 @@ class SpotsTableViewController: UITableViewController {
     private func parseNetworkEvent(event : Event<SpotsResponse>) {
         switch event {
         case .Next(let res):
-            self.structures = res.structures
-            self.tableView.reloadData()
+            self.structures.value = res.structures
             break
         case .Error(let err):
             print(err)
@@ -77,6 +93,58 @@ class SpotsTableViewController: UITableViewController {
         case .Completed:
             break
         }
+    }
+    
+}
+
+extension SpotsTableViewController : UITableViewDelegate {
+    
+    func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
+        return .None
+    }
+    
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        if let spotsCell = cell as? SpotsTableViewCell {
+            spotsCell.setCollectionViewDataSourceDelegate(self, withDelegate: self, atIndexPath: indexPath)
+        }
+    }
+    
+}
+
+extension SpotsTableViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
+        let cvWidth = collectionView.bounds.width / 5
+        return cvWidth - 50
+    }
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let levelCell : UICollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("LevelCell", forIndexPath: indexPath)
+        
+        guard let spotsCollectionCell = collectionView as? SpotsIndexedCollectionView, let spotsCircleCollectionCell = levelCell as? SpotsCircleCollectionViewCell else {
+            return levelCell
+        }
+        
+        let row = spotsCollectionCell.indexPath.row
+        let levelRow = indexPath.row
+        let structure = structures.value[row]
+        
+        guard levelRow < structure.levels.count else {
+            let emptyCell = collectionView.dequeueReusableCellWithReuseIdentifier("EmptyCell", forIndexPath: indexPath)
+            return emptyCell
+        }
+        
+        let level = structure.levels[levelRow]
+        spotsCircleCollectionCell.spotsCircleView.countLabel.text = "\(level.available)"
+        spotsCircleCollectionCell.spotsCircleView.titleLabel.text = "LEVEL \(level.name)"
+        spotsCircleCollectionCell.spotsCircleView.spotsCircleView.setCapacityLevel(CGFloat(level.available), outOfTotalCapacity: CGFloat(level.total))
+        spotsCircleCollectionCell.spotsCircleView.spotsCircleView.animateCircle(Double(row) * 0.35 + Double(levelRow) * 0.15)
+        
+        return levelCell
     }
     
 }

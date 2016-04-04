@@ -12,7 +12,7 @@ import Moya
 
 class SpotsAPI {
     
-    class func getSpotsData(provider : SpotsAPIProvider) ->  Observable<SpotsResponse>{
+    class func getSpotsData(provider : SpotsAPIProvider) ->  Observable<SpotsResponse> {
         return provider.request(.Parking)
             .mapObject(SpotsResponse)
     }
@@ -30,9 +30,9 @@ public enum Spots {
     case Parking
 }
 
-extension Spots : TargetType{
+extension Spots : TargetType {
     public var baseURL : NSURL {
-        return NSURL(string: SPOTS_API_URL)!
+        return NSURL(string: CHAPMAN_UNIVERSITY_URL)!
     }
     
     public var path: String {
