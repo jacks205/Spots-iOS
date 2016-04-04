@@ -2,6 +2,9 @@ Spots: University Parking
 ----
 [<img src="https://devimages.apple.com.edgekey.net/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg"/>](https://geo.itunes.apple.com/us/app/spots-university-parking/id1043748792?mt=8)
 
+<img src="https://www.bitrise.io/app/63a467ed6ba63f3b.svg?token=unDvIA804nZ7Wl0jOcN8Rw&branch=master"/>
+
+
 Written using:
 - [RxSwift](https://github.com/ReactiveX/RxSwift/)
 - [Moya](https://github.com/Moya/Moya)
@@ -14,7 +17,11 @@ Install dependencies:
 pod install
 ```
 
-Contact [me](mailto:jacks205@mail.chapman.edu) for API Endpoints
+TODO:
+- Unit Tests
+- Today Extension
+- Crashlytics integration
+- Add more schools (CSUF)
 
 
 ## Current Design Scheme

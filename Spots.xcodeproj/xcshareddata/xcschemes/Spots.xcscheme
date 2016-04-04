@@ -10,7 +10,7 @@
             ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
             <ActionContent
                title = "Run Script"
-               scriptText = "buildNumber=$(git rev-list HEAD | wc -l | tr -d &apos; &apos;)&#10;/usr/libexec/PlistBuddy -c &quot;Set :CFBundleVersion $buildNumber&quot; &quot;${PROJECT_DIR}/${INFOPLIST_FILE}&quot;">
+               scriptText = "">
                <EnvironmentBuildable>
                   <BuildableReference
                      BuildableIdentifier = "primary"
