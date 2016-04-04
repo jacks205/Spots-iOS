@@ -30,4 +30,4 @@ Contact [me](mailto:jacks205@mail.chapman.edu) for API Endpoints
 <img src="http://i.imgur.com/xpnCRg0.png" width="320"/>
 
 
-Copyright 2015 Mark Jackson
+Copyright 2016 Mark Jackson
