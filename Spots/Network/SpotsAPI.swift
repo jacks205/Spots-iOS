@@ -9,6 +9,14 @@
 import Foundation
 import RxSwift
 import Moya
+import Moya_ObjectMapper
+
+//MARK: - Shared Defaults
+
+let SpotsSharedDefaults = NSUserDefaults(suiteName: SPOTS_SUITE_NAME)!
+
+
+//MARK: - Spots API
 
 class SpotsAPI {
     

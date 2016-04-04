@@ -91,7 +91,7 @@ class SpotsSchoolSelectionViewController: UIViewController, UITableViewDelegate 
     }
     
     func saveSchoolToUserDefaults(school : String) {
-        NSUserDefaults.standardUserDefaults().setObject(school, forKey: "school")
+        SpotsSharedDefaults.setObject(school, forKey: "school")
     }
 
 }

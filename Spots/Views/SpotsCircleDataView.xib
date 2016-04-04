@@ -32,6 +32,11 @@
                     <constraints>
                         <constraint firstAttribute="width" secondItem="edU-fX-oc1" secondAttribute="height" multiplier="1:1" id="yab-Ns-qLB"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="baseColor">
+                            <color key="value" red="0.14117647058823529" green="0.18823529411764706" blue="0.25882352941176467" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LEVEL 9" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34b-4f-X2K">
                     <rect key="frame" x="0.0" y="55" width="50" height="14"/>

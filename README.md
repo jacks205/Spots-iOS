@@ -9,6 +9,7 @@ Written using:
 - [RxSwift](https://github.com/ReactiveX/RxSwift/)
 - [Moya](https://github.com/Moya/Moya)
 - [Moya-ObjectMapper](https://github.com/ivanbruel/Moya-ObjectMapper)
+- [RxDataSources](https://github.com/RxSwiftCommunity/RxDataSources)
 
 To contribute:
 

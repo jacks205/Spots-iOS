@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import RxSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,10 +21,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
         #if DEBUG
-            NSUserDefaults.standardUserDefaults().setObject(nil, forKey: "school")
+            SpotsSharedDefaults.setObject(nil, forKey: "school")
         #endif
         
-        if let _ = NSUserDefaults.standardUserDefaults().stringForKey("school") {
+        if SpotsSharedDefaults.stringForKey("school") != nil {
             let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let spotsVc = mainStoryboard.instantiateInitialViewController()
             let nvc = UINavigationController(rootViewController: spotsVc!)
