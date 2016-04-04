@@ -28,26 +28,35 @@ class SpotsTodayViewController: UIViewController, NCWidgetProviding {
         super.viewDidLoad()
         
         guard SpotsSharedDefaults.objectForKey("school") != nil else {
-            addSchoolBtn
-                .rx_tap
-                .subscribeNext {
-                    self.extensionContext?.openURL(NSURL(string: "AppUrlType://home")!, completionHandler: nil)
-                }
-                .addDisposableTo(db)
-            
-            //School is not chosen
-            //...
-            //Hide: collectionView, updateLabel
-            //Show: noSchoolSelectedView
-            noSchoolSelectedView.hidden = false
-            updatedLabel.hidden = true
-            collectionView.hidden = true
-            
-            //Set preferred length to 60 (smallest height we want)
-            preferredContentSize = CGSize(width: 0, height: 60)
+            setupAndShowSelectSchoolView()
             return
         }
 
+        setupAndShowCollectionView()
+        
+    }
+    
+    func setupAndShowSelectSchoolView() {
+        addSchoolBtn
+            .rx_tap
+            .subscribeNext {
+                self.extensionContext?.openURL(NSURL(string: "AppUrlType://home")!, completionHandler: nil)
+            }
+            .addDisposableTo(db)
+        
+        //School is not chosen
+        //...
+        //Hide: collectionView, updateLabel
+        //Show: noSchoolSelectedView
+        noSchoolSelectedView.hidden = false
+        updatedLabel.hidden = true
+        collectionView.hidden = true
+        
+        //Set preferred length to 60 (smallest height we want)
+        preferredContentSize = CGSize(width: 0, height: 60)
+    }
+    
+    func setupAndShowCollectionView() {
         noSchoolSelectedView.hidden = true
         collectionView.hidden = false
         updatedLabel.hidden = false
@@ -77,7 +86,6 @@ class SpotsTodayViewController: UIViewController, NCWidgetProviding {
                 self.parseNetworkEvent(event)
             }
             .addDisposableTo(db)
-        
     }
     
     //MARK: - Spots Requests
