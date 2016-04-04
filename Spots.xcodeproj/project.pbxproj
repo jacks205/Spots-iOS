@@ -14,7 +14,6 @@
 		EA06CCFF1CADF811007F5851 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA06CCFE1CADF811007F5851 /* Assets.xcassets */; };
 		EA06CD021CADF811007F5851 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA06CD001CADF811007F5851 /* LaunchScreen.storyboard */; };
 		EA06CD0D1CADF811007F5851 /* SpotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA06CD0C1CADF811007F5851 /* SpotsTests.swift */; };
-		EA06CD181CADF811007F5851 /* SpotsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA06CD171CADF811007F5851 /* SpotsUITests.swift */; };
 		EA06CD291CAE008D007F5851 /* SpotsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA06CD281CAE008D007F5851 /* SpotsTableViewController.swift */; };
 		EA06CD2D1CAE7A53007F5851 /* SpotsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA06CD2C1CAE7A53007F5851 /* SpotsAPI.swift */; };
 		EA06CD311CAE7F5B007F5851 /* SpotsResponseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA06CD301CAE7F5B007F5851 /* SpotsResponseModels.swift */; };
@@ -107,20 +106,17 @@
 		EA06CD081CADF811007F5851 /* SpotsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpotsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA06CD0C1CADF811007F5851 /* SpotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotsTests.swift; sourceTree = "<group>"; };
 		EA06CD0E1CADF811007F5851 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EA06CD131CADF811007F5851 /* SpotsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpotsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EA06CD171CADF811007F5851 /* SpotsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotsUITests.swift; sourceTree = "<group>"; };
-		EA06CD191CADF811007F5851 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EA06CD261CADF9E6007F5851 /* Spots-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Spots-Prefix.pch"; sourceTree = "<group>"; };
+		EA06CD261CADF9E6007F5851 /* Spots-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Spots-Prefix.pch"; path = "SupportingFiles/Spots-Prefix.pch"; sourceTree = "<group>"; };
 		EA06CD281CAE008D007F5851 /* SpotsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotsTableViewController.swift; path = Controllers/SpotsTableViewController.swift; sourceTree = "<group>"; };
 		EA06CD2C1CAE7A53007F5851 /* SpotsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotsAPI.swift; path = Network/SpotsAPI.swift; sourceTree = "<group>"; };
-		EA06CD2E1CAE7C89007F5851 /* Spots-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Spots-Bridging-Header.h"; sourceTree = "<group>"; };
+		EA06CD2E1CAE7C89007F5851 /* Spots-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Spots-Bridging-Header.h"; path = "SupportingFiles/Spots-Bridging-Header.h"; sourceTree = "<group>"; };
 		EA06CD301CAE7F5B007F5851 /* SpotsResponseModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotsResponseModels.swift; path = Models/SpotsResponseModels.swift; sourceTree = "<group>"; };
-		EA2A92771CAEF49D00DAC302 /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		EA2A92771CAEF49D00DAC302 /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicator.swift; path = SupportingFiles/ActivityIndicator.swift; sourceTree = "<group>"; };
 		EA2A92791CB1F1F100DAC302 /* SpotsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotsTableViewCell.swift; path = Views/SpotsTableViewCell.swift; sourceTree = "<group>"; };
 		EA2A927B1CB1F26900DAC302 /* SchoolSelection.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SchoolSelection.storyboard; path = Views/SchoolSelection.storyboard; sourceTree = "<group>"; };
 		EA2A927D1CB1F2F900DAC302 /* SpotsSchoolSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotsSchoolSelectionViewController.swift; path = Views/SpotsSchoolSelectionViewController.swift; sourceTree = "<group>"; };
-		EA2A927F1CB2244F00DAC302 /* SpotsConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpotsConfiguration.h; sourceTree = "<group>"; };
-		EA2A92801CB240ED00DAC302 /* SpotsAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotsAppearance.swift; sourceTree = "<group>"; };
+		EA2A927F1CB2244F00DAC302 /* SpotsConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SpotsConfiguration.h; path = SupportingFiles/SpotsConfiguration.h; sourceTree = "<group>"; };
+		EA2A92801CB240ED00DAC302 /* SpotsAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotsAppearance.swift; path = SupportingFiles/SpotsAppearance.swift; sourceTree = "<group>"; };
 		EA2A92851CB2654700DAC302 /* SpotsCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotsCircleView.swift; path = Views/SpotsCircleView.swift; sourceTree = "<group>"; };
 		EA2A92871CB2670F00DAC302 /* SpotsCircleDataView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SpotsCircleDataView.xib; path = Views/SpotsCircleDataView.xib; sourceTree = "<group>"; };
 		EA675E0C1CB319DC0058C0AB /* Spots.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Spots.entitlements; sourceTree = "<group>"; };
@@ -210,7 +206,6 @@
 			children = (
 				EA06CCF61CADF811007F5851 /* Spots */,
 				EA06CD0B1CADF811007F5851 /* SpotsTests */,
-				EA06CD161CADF811007F5851 /* SpotsUITests */,
 				EAD96EEB1CB3018E00E1BF73 /* SpotsToday */,
 				EA06CCF51CADF811007F5851 /* Products */,
 				B49F221810B5DB5D981E90FD /* Pods */,
@@ -223,7 +218,6 @@
 			children = (
 				EA06CCF41CADF811007F5851 /* Spots.app */,
 				EA06CD081CADF811007F5851 /* SpotsTests.xctest */,
-				EA06CD131CADF811007F5851 /* SpotsUITests.xctest */,
 				EAD96EE81CB3018E00E1BF73 /* SpotsToday.appex */,
 			);
 			name = Products;
@@ -250,15 +244,6 @@
 				EA06CD0E1CADF811007F5851 /* Info.plist */,
 			);
 			path = SpotsTests;
-			sourceTree = "<group>";
-		};
-		EA06CD161CADF811007F5851 /* SpotsUITests */ = {
-			isa = PBXGroup;
-			children = (
-				EA06CD171CADF811007F5851 /* SpotsUITests.swift */,
-				EA06CD191CADF811007F5851 /* Info.plist */,
-			);
-			path = SpotsUITests;
 			sourceTree = "<group>";
 		};
 		EA06CD251CADF985007F5851 /* Support Files */ = {
@@ -393,24 +378,6 @@
 			productReference = EA06CD081CADF811007F5851 /* SpotsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		EA06CD121CADF811007F5851 /* SpotsUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = EA06CD221CADF811007F5851 /* Build configuration list for PBXNativeTarget "SpotsUITests" */;
-			buildPhases = (
-				EA06CD0F1CADF811007F5851 /* Sources */,
-				EA06CD101CADF811007F5851 /* Frameworks */,
-				EA06CD111CADF811007F5851 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				EA06CD151CADF811007F5851 /* PBXTargetDependency */,
-			);
-			name = SpotsUITests;
-			productName = SpotsUITests;
-			productReference = EA06CD131CADF811007F5851 /* SpotsUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 		EAD96EE71CB3018E00E1BF73 /* SpotsToday */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EAD96EF71CB3018E00E1BF73 /* Build configuration list for PBXNativeTarget "SpotsToday" */;
@@ -484,7 +451,6 @@
 			targets = (
 				EA06CCF31CADF811007F5851 /* Spots */,
 				EA06CD071CADF811007F5851 /* SpotsTests */,
-				EA06CD121CADF811007F5851 /* SpotsUITests */,
 				EAD96EE71CB3018E00E1BF73 /* SpotsToday */,
 			);
 		};
@@ -673,14 +639,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EA06CD0F1CADF811007F5851 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EA06CD181CADF811007F5851 /* SpotsUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		EAD96EE41CB3018E00E1BF73 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -841,12 +799,13 @@
 				CODE_SIGN_ENTITLEMENTS = Spots/Spots.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
-				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "$(SRCROOT)/Spots-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "$(SRCROOT)/SupportingFiles/Spots-Prefix.pch";
 				INFOPLIST_FILE = Spots/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jacks205.spots;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$SRCROOT/Spots/SupportingFiles/Spots-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -858,12 +817,13 @@
 				CODE_SIGN_ENTITLEMENTS = Spots/Spots.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
-				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "$(SRCROOT)/Spots-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "$(SRCROOT)/SupportingFiles/Spots-Prefix.pch";
 				INFOPLIST_FILE = Spots/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jacks205.spots;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$SRCROOT/Spots/SupportingFiles/Spots-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -890,30 +850,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jacks205.SpotsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Spots.app/Spots";
-			};
-			name = Release;
-		};
-		EA06CD231CADF811007F5851 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
-				INFOPLIST_FILE = SpotsUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jacks205.SpotsUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = Spots;
-			};
-			name = Debug;
-		};
-		EA06CD241CADF811007F5851 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
-				INFOPLIST_FILE = SpotsUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jacks205.SpotsUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = Spots;
 			};
 			name = Release;
 		};
@@ -983,15 +919,6 @@
 			buildConfigurations = (
 				EA06CD201CADF811007F5851 /* Debug */,
 				EA06CD211CADF811007F5851 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		EA06CD221CADF811007F5851 /* Build configuration list for PBXNativeTarget "SpotsUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				EA06CD231CADF811007F5851 /* Debug */,
-				EA06CD241CADF811007F5851 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

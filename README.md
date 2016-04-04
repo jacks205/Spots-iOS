@@ -2,8 +2,7 @@ Spots: University Parking
 ----
 [<img src="https://devimages.apple.com.edgekey.net/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg"/>](https://geo.itunes.apple.com/us/app/spots-university-parking/id1043748792?mt=8)
 
-<img src="https://www.bitrise.io/app/63a467ed6ba63f3b.svg?token=unDvIA804nZ7Wl0jOcN8Rw&branch=master"/>
-
+[![Build Status](https://travis-ci.org/jacks205/Spots-iOS.svg?branch=master)](https://travis-ci.org/jacks205/Spots-iOS)
 
 Written using:
 - [RxSwift](https://github.com/ReactiveX/RxSwift/)
