@@ -9,7 +9,7 @@ import UIKit
 
 @IBDesignable class SpotsCircleView: UIView {
     
-    var baseColor : UIColor = SpotsAppearance.Circle.Base
+    @IBInspectable var baseColor : UIColor?
     var fillColor : UIColor = SpotsAppearance.Circle.Green
     
     private var amountFilled : CGFloat = 25
@@ -75,7 +75,7 @@ import UIKit
     override func drawRect(rect: CGRect) {
         // Drawing code
         //Outer Circle
-        let outerColor : UIColor = baseColor
+        let outerColor : UIColor = baseColor!
         outerColor.setFill()
         let basePath : UIBezierPath = UIBezierPath(ovalInRect: CGRectInset(rect, 1, 1))
         basePath.fill()

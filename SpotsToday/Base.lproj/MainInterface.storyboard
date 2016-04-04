@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="UCM-ym-GHd">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
+            <string>OpenSans</string>
+        </mutableArray>
+        <mutableArray key="OpenSans-Semibold.ttf">
+            <string>OpenSans-Semibold</string>
+        </mutableArray>
+    </customFonts>
+    <scenes>
+        <!--Spots Today View Controller-->
+        <scene sceneID="Dk0-FN-alx">
+            <objects>
+                <viewController id="UCM-ym-GHd" customClass="SpotsTodayViewController" customModule="SpotsToday" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xZS-1h-fXC"/>
+                        <viewControllerLayoutGuide type="bottom" id="cmV-PA-GaU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="1da-7G-d7J">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="173"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VhI-CO-838">
+                                <rect key="frame" x="20" y="8" width="280" height="157"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FpI-ki-XIt" customClass="SpotsTodayButton" customModule="SpotsToday" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="8" width="264" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="pEU-sj-7nb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
+                                        <state key="normal" title="Please add a school">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="FpI-ki-XIt" firstAttribute="leading" secondItem="VhI-CO-838" secondAttribute="leading" constant="8" id="1IA-Oj-TAT"/>
+                                    <constraint firstAttribute="trailing" secondItem="FpI-ki-XIt" secondAttribute="trailing" constant="8" id="1Rj-7V-nXQ"/>
+                                    <constraint firstItem="FpI-ki-XIt" firstAttribute="top" secondItem="VhI-CO-838" secondAttribute="topMargin" id="Ewc-Rp-m9h"/>
+                                </constraints>
+                            </view>
+                            <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Uu2-C1-w75">
+                                <rect key="frame" x="20" y="20" width="280" height="116"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="FeV-st-R1M"/>
+                                    <constraint firstAttribute="height" constant="116" id="bL1-BJ-KYv"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="pOk-vh-hKz">
+                                    <size key="itemSize" width="137" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TodayCell" id="i42-Kd-QLR" customClass="SpotsTodayCollectionViewCell" customModule="SpotsToday" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="137" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="137" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BARRERA" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHT-XC-hOe">
+                                                    <rect key="frame" x="58" y="8" width="79" height="23"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="79" id="0Lo-iE-69S"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="10"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="0.47999999999999998" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="137 spots" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NhT-HN-rNB">
+                                                    <rect key="frame" x="58" y="26" width="79" height="17"/>
+                                                    <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="12"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ux6-wM-hpb" customClass="SpotsCircleView" customModule="SpotsToday" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="baseColor">
+                                                            <color key="value" red="1" green="1" blue="1" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="Ux6-wM-hpb" firstAttribute="leading" secondItem="i42-Kd-QLR" secondAttribute="leading" id="2CP-of-sOF"/>
+                                            <constraint firstAttribute="bottom" secondItem="Ux6-wM-hpb" secondAttribute="bottom" id="2RE-hQ-qvx"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="NhT-HN-rNB" secondAttribute="bottom" constant="-1" id="6GX-8D-cNw"/>
+                                            <constraint firstItem="tHT-XC-hOe" firstAttribute="trailing" secondItem="NhT-HN-rNB" secondAttribute="trailing" id="8xb-5B-cWF"/>
+                                            <constraint firstItem="NhT-HN-rNB" firstAttribute="top" secondItem="i42-Kd-QLR" secondAttribute="topMargin" constant="18" id="Icy-ti-Re1"/>
+                                            <constraint firstAttribute="trailing" secondItem="tHT-XC-hOe" secondAttribute="trailing" id="Sta-AV-QLB"/>
+                                            <constraint firstItem="tHT-XC-hOe" firstAttribute="leading" secondItem="Ux6-wM-hpb" secondAttribute="trailing" constant="8" symbolic="YES" id="Tbh-fu-sI8"/>
+                                            <constraint firstItem="tHT-XC-hOe" firstAttribute="leading" secondItem="NhT-HN-rNB" secondAttribute="leading" id="YBG-FD-PhH"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="tHT-XC-hOe" secondAttribute="bottom" constant="11" id="dRP-CG-PGb"/>
+                                            <constraint firstItem="tHT-XC-hOe" firstAttribute="top" secondItem="i42-Kd-QLR" secondAttribute="topMargin" id="rM8-yZ-xc1"/>
+                                            <constraint firstItem="Ux6-wM-hpb" firstAttribute="top" secondItem="i42-Kd-QLR" secondAttribute="top" id="tGq-1j-m6H"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="amountLabel" destination="NhT-HN-rNB" id="Anf-5l-zhb"/>
+                                            <outlet property="spotsCircleView" destination="Ux6-wM-hpb" id="omD-KR-y3w"/>
+                                            <outlet property="titleLabel" destination="tHT-XC-hOe" id="NMv-2p-bAp"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EmptyCell" id="cWo-xE-ESb">
+                                        <rect key="frame" x="143" y="0.0" width="137" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="137" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b4V-tC-dIR" customClass="EmptyCircleView" customModule="SpotsToday" customModuleProvider="target">
+                                                    <rect key="frame" x="-5" y="-5" width="60" height="60"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailingMargin" secondItem="b4V-tC-dIR" secondAttribute="trailing" constant="74" id="0Ld-wP-8wQ"/>
+                                            <constraint firstItem="b4V-tC-dIR" firstAttribute="top" secondItem="cWo-xE-ESb" secondAttribute="topMargin" constant="-13" id="OWF-dD-ToM"/>
+                                            <constraint firstItem="b4V-tC-dIR" firstAttribute="centerY" secondItem="cWo-xE-ESb" secondAttribute="centerY" id="VeF-WQ-CjX"/>
+                                            <constraint firstItem="b4V-tC-dIR" firstAttribute="leading" secondItem="cWo-xE-ESb" secondAttribute="leadingMargin" constant="-13" id="qJe-ii-ahY"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Updated just now" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bRf-bK-P9A">
+                                <rect key="frame" x="20" y="144" width="280" height="14"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="5Oq-K2-hC8"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="280" id="t7f-Rj-r8H"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="0.25" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Uu2-C1-w75" firstAttribute="centerX" secondItem="1da-7G-d7J" secondAttribute="centerX" id="1xX-Gu-i2r"/>
+                            <constraint firstItem="VhI-CO-838" firstAttribute="centerX" secondItem="Uu2-C1-w75" secondAttribute="centerX" id="2Vr-7Z-TIP"/>
+                            <constraint firstItem="Uu2-C1-w75" firstAttribute="trailing" secondItem="bRf-bK-P9A" secondAttribute="trailing" id="6Tf-r6-3Xv"/>
+                            <constraint firstItem="Uu2-C1-w75" firstAttribute="top" secondItem="1da-7G-d7J" secondAttribute="top" constant="20" symbolic="YES" id="Aay-fh-hNm"/>
+                            <constraint firstItem="Uu2-C1-w75" firstAttribute="leading" secondItem="1da-7G-d7J" secondAttribute="leadingMargin" constant="4" id="Bm3-lv-DIt"/>
+                            <constraint firstItem="VhI-CO-838" firstAttribute="leading" secondItem="1da-7G-d7J" secondAttribute="leading" constant="20" id="KcY-T0-7lZ"/>
+                            <constraint firstItem="Uu2-C1-w75" firstAttribute="leading" secondItem="bRf-bK-P9A" secondAttribute="leading" id="TI7-SS-Zvs"/>
+                            <constraint firstItem="bRf-bK-P9A" firstAttribute="top" secondItem="Uu2-C1-w75" secondAttribute="bottom" constant="8" symbolic="YES" id="ay5-Ut-yOA"/>
+                            <constraint firstItem="VhI-CO-838" firstAttribute="bottom" secondItem="cmV-PA-GaU" secondAttribute="top" constant="-8" id="fzr-yc-0oV"/>
+                            <constraint firstItem="VhI-CO-838" firstAttribute="top" secondItem="xZS-1h-fXC" secondAttribute="bottom" constant="8" id="sZm-tE-Htw"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="173"/>
+                    <connections>
+                        <outlet property="addSchoolBtn" destination="FpI-ki-XIt" id="Bel-d9-gID"/>
+                        <outlet property="collectionView" destination="Uu2-C1-w75" id="YM2-71-Lci"/>
+                        <outlet property="noSchoolSelectedView" destination="VhI-CO-838" id="moQ-zl-SRu"/>
+                        <outlet property="updatedLabel" destination="bRf-bK-P9A" id="BKA-8D-0bT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kMd-ah-b9F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="516" y="284.5"/>
+        </scene>
+    </scenes>
+</document>

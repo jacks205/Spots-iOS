@@ -7,6 +7,7 @@ target 'Spots' do
 pod 'RxSwift'
 pod 'Moya-ObjectMapper/RxSwift', '1.2'
 pod 'RxCocoa', '2.3.1'
+pod 'RxDataSources'
 end
 
 target 'SpotsTests' do

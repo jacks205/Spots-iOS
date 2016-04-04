@@ -8,6 +8,7 @@
 
 import Foundation
 import ObjectMapper
+import RxDataSources
 
 struct SpotsResponse: Mappable {
     
@@ -44,6 +45,8 @@ struct Structure: Mappable {
     var total : Int!
     
     init?(_ map: Map) { }
+    
+    init() { }
     
     mutating func mapping(map: Map) {
         levels <- map["levels"]
@@ -145,7 +148,7 @@ public func timeAgoSinceDate(date:NSDate, numericDates:Bool) -> String {
     } else if components.second >= 3 {
         return "\(components.second) seconds ago"
     } else {
-        return "Just now"
+        return "just now"
     }
     
 }
