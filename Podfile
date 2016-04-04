@@ -12,8 +12,3 @@ end
 target 'SpotsTests' do
 
 end
-
-target 'SpotsUITests' do
-
-end
-
