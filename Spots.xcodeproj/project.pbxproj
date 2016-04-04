@@ -60,13 +60,6 @@
 			remoteGlobalIDString = EA06CCF31CADF811007F5851;
 			remoteInfo = Spots;
 		};
-		EA06CD141CADF811007F5851 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EA06CCEC1CADF811007F5851 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EA06CCF31CADF811007F5851;
-			remoteInfo = Spots;
-		};
 		EAD96EF21CB3018E00E1BF73 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EA06CCEC1CADF811007F5851 /* Project object */;
@@ -155,13 +148,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		EA06CD051CADF811007F5851 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EA06CD101CADF811007F5851 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -421,10 +407,6 @@
 						CreatedOnToolsVersion = 7.3;
 						TestTargetID = EA06CCF31CADF811007F5851;
 					};
-					EA06CD121CADF811007F5851 = {
-						CreatedOnToolsVersion = 7.3;
-						TestTargetID = EA06CCF31CADF811007F5851;
-					};
 					EAD96EE71CB3018E00E1BF73 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 23KKLX956K;
@@ -480,13 +462,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		EA06CD061CADF811007F5851 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EA06CD111CADF811007F5851 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -662,11 +637,6 @@
 			target = EA06CCF31CADF811007F5851 /* Spots */;
 			targetProxy = EA06CD091CADF811007F5851 /* PBXContainerItemProxy */;
 		};
-		EA06CD151CADF811007F5851 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = EA06CCF31CADF811007F5851 /* Spots */;
-			targetProxy = EA06CD141CADF811007F5851 /* PBXContainerItemProxy */;
-		};
 		EAD96EF31CB3018E00E1BF73 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = EAD96EE71CB3018E00E1BF73 /* SpotsToday */;
@@ -745,7 +715,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "-DDEBUG";
 				SDKROOT = iphoneos;
-				SWIFT_OBJC_BRIDGING_HEADER = "$SRCROOT/Spots/Spots-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$SRCROOT/Spots/SupportingFiles/Spots-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -786,7 +756,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_SWIFT_FLAGS = "-DRELEASE";
 				SDKROOT = iphoneos;
-				SWIFT_OBJC_BRIDGING_HEADER = "$SRCROOT/Spots/Spots-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$SRCROOT/Spots/SupportingFiles/Spots-Bridging-Header.h";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -805,7 +775,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jacks205.spots;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "$SRCROOT/Spots/SupportingFiles/Spots-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(inherited)";
 			};
 			name = Debug;
 		};
@@ -823,7 +793,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jacks205.spots;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "$SRCROOT/Spots/SupportingFiles/Spots-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(inherited)";
 			};
 			name = Release;
 		};
@@ -836,6 +806,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jacks205.SpotsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(inherited)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Spots.app/Spots";
 			};
 			name = Debug;
@@ -849,6 +820,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jacks205.SpotsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(inherited)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Spots.app/Spots";
 			};
 			name = Release;
@@ -870,6 +842,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jacks205.spots.spotstoday;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(inherited)";
 			};
 			name = Debug;
 		};
@@ -890,6 +863,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jacks205.spots.spotstoday;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(inherited)";
 			};
 			name = Release;
 		};
