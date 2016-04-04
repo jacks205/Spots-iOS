@@ -6,4 +6,5 @@ before_install:
          - gem install xcpretty -N
 script:
          - xcodebuild -workspace Spots.xcworkspace -scheme "Spots" -destination "platform=iOS Simulator,name=iPhone 6,OS=lastest" test | xcpretty -c
-
+notifications:
+        email: false
