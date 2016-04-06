@@ -19,7 +19,7 @@ pod install
 
 TODO:
 - Unit Tests
-- Today Extension
+- ~~Today Extension~~
 - Crashlytics integration
 - Add more schools (CSUF)
 
