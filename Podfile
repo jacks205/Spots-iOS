@@ -4,6 +4,8 @@ platform :ios, '9.0'
 use_frameworks!
 
 target 'Spots' do
+pod 'Fabric'
+pod 'Crashlytics'
 pod 'RxSwift'
 pod 'Moya-ObjectMapper/RxSwift', '1.2'
 pod 'RxCocoa', '2.3.1'
@@ -15,6 +17,8 @@ target 'SpotsTests' do
 end
 
 target 'SpotsToday' do
+    pod 'Fabric'
+    pod 'Crashlytics'
     pod 'RxSwift'
     pod 'Moya-ObjectMapper/RxSwift', '1.2'
     pod 'RxCocoa', '2.3.1'

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Fabric
+import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,12 +18,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        
         UINavigationBar.appearance().barTintColor = SpotsAppearance.Background
         
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
         #if DEBUG
             SpotsSharedDefaults.setObject(nil, forKey: "school")
+            Crashlytics().debugMode = true
         #endif
         
         if SpotsSharedDefaults.stringForKey("school") != nil {
@@ -36,6 +41,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         window?.makeKeyAndVisible()
+        
+        
+        Fabric.with([Crashlytics.self])
         
         return true
     }
