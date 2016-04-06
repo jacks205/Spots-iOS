@@ -1,5 +1,8 @@
 PODS:
   - Alamofire (3.3.0)
+  - Crashlytics (3.7.0):
+    - Fabric (~> 1.6.3)
+  - Fabric (1.6.7)
   - Moya (6.4.0):
     - Moya/Core (= 6.4.0)
   - Moya-ObjectMapper/Core (1.2):
@@ -25,6 +28,8 @@ PODS:
   - RxSwift (2.3.1)
 
 DEPENDENCIES:
+  - Crashlytics
+  - Fabric
   - Moya-ObjectMapper/RxSwift (= 1.2)
   - RxCocoa (= 2.3.1)
   - RxDataSources
@@ -32,6 +37,8 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: 9054db4a1b1ca9e363223183e01cea380159a27c
+  Crashlytics: c3a2333dea9e2733d2777f730910321fc9e25c0d
+  Fabric: caf7580c725e64db144f610ac65cd60956911dc7
   Moya: 4d526954c8afd79820991393d40d7d8af756ceee
   Moya-ObjectMapper: 565c1e9e1e79bdf72e18fa8fa01a0741d042fa34
   ObjectMapper: b1e9c7c8a9f6400b72690c80072c131504caa66f

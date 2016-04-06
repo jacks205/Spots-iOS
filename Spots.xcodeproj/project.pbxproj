@@ -335,6 +335,7 @@
 				B21149D86FC15C9BC4D4493B /* Copy Pods Resources */,
 				EA2A92821CB2509F00DAC302 /* ShellScript */,
 				EAD96EF81CB3018E00E1BF73 /* Embed App Extensions */,
+				EA827B211CB4BF9F0069D0BB /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -581,6 +582,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		EA827B211CB4BF9F0069D0BB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 9466831a2eed0c9232cc35a77d38577263133283 da5c94cf7e239dfb72635f25fd0f8beb931d15d23995dc48a31e8c991354f3de";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -833,6 +847,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_ENTITLEMENTS = SpotsToday/SpotsToday.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -854,6 +869,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_ENTITLEMENTS = SpotsToday/SpotsToday.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
