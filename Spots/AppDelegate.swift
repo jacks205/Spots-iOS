@@ -24,6 +24,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
+        if !SpotsSharedDefaults.boolForKey("neverRate") {
+            let totalLaunches = SpotsSharedDefaults.integerForKey("launches")
+            SpotsSharedDefaults.setInteger(totalLaunches + 1, forKey: "launches")
+        }
+        
         #if DEBUG
             SpotsSharedDefaults.setObject(nil, forKey: "school")
             Crashlytics().debugMode = true

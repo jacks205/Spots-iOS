@@ -9,6 +9,7 @@
 #ifndef SpotsConfiguration_h
 #define SpotsConfiguration_h
 
+#define APP_STORE_URL @"itms-apps://itunes.apple.com/us/app/apple-store/id1043748792?mt=8"
 #define SPOTS_SUITE_NAME @"group.com.jacks205.spots"
 #define CHAPMAN_UNIVERSITY_URL @"http://104.236.148.60:8000"
 #define CSUF_URL @"https://parking.fullerton.edu"

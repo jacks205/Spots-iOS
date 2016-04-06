@@ -11,6 +11,10 @@ import RxSwift
 import RxCocoa
 import Moya
 import Moya_ObjectMapper
+import SafariServices
+
+let minimumSessions = 0
+let maybeLaterSessions = minimumSessions + 8
 
 class SpotsTableViewController: UIViewController {
     
@@ -39,6 +43,14 @@ class SpotsTableViewController: UIViewController {
             
         setupTableView()
         setupRefreshControl()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let neverRate = SpotsSharedDefaults.boolForKey("neverRate")
+        let totalLaunches = Variable(SpotsSharedDefaults.integerForKey("launches"))
+        setupRateAppController(neverRate, totalLaunches: totalLaunches)
     }
     
     private func setupTableView() {
@@ -74,6 +86,37 @@ class SpotsTableViewController: UIViewController {
             .addDisposableTo(db)
         
         tableView.insertSubview(refreshControl!, atIndex: 0)
+    }
+    
+    private func setupRateAppController(neverRate : Bool, totalLaunches : Variable<Int>) {
+        totalLaunches.asObservable()
+            .filter { !neverRate && ($0 == minimumSessions + 1 || $0 > minimumSessions + maybeLaterSessions) }
+            .subscribeNext { launches in
+                self.presentRateController()
+                SpotsSharedDefaults.setInteger(minimumSessions + 1, forKey: "launches")
+            }
+            .addDisposableTo(db)
+    }
+    
+    private func presentRateController() {
+        let alert = UIAlertController(title: "Rate Us", message: "Thanks for using Spots. Please go rate us in the App Store!", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Rate Spots", style: UIAlertActionStyle.Default, handler: { alertAction in
+            let appStoreUrl = NSURL(string: APP_STORE_URL)!
+            if UIApplication.sharedApplication().canOpenURL(appStoreUrl) {
+                UIApplication.sharedApplication().openURL(appStoreUrl)
+                SpotsSharedDefaults.setBool(true, forKey: "neverRate")
+            }
+            alert.dismissViewControllerAnimated(true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "No Thanks", style: UIAlertActionStyle.Default, handler: { alertAction in
+            SpotsSharedDefaults.setBool(true, forKey: "neverRate")
+            alert.dismissViewControllerAnimated(true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Maybe Later", style: UIAlertActionStyle.Default, handler: { alertAction in
+            alert.dismissViewControllerAnimated(true, completion: nil)
+            
+        }))
+        self.presentViewController(alert, animated: true, completion: nil)
     }
 
     //MARK: - Spots Requests

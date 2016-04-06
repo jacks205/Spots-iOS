@@ -22,7 +22,7 @@ TODO:
 - ~~Today Extension~~
 - ~~Crashlytics integration~~
 - Add more schools (CSUF)
-- Rate app logic
+- ~~Rate app logic~~
 
 ## Current Design Scheme
 
