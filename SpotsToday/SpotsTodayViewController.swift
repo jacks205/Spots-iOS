@@ -95,7 +95,7 @@ class SpotsTodayViewController: UIViewController, NCWidgetProviding {
     }
     
     private func setStructuresDataSource(response : SpotsResponse) -> Observable<[SectionModel<String, Structure>]> {
-        return Observable.create { (observer) -> Disposable in
+        return Observable.create { observer -> Disposable in
             var structures = response.structures
             if response.structures.count % 2 == 1 {
                 structures.append(Structure())
