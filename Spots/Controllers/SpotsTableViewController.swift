@@ -11,9 +11,9 @@ import RxSwift
 import RxCocoa
 import Moya
 import Moya_ObjectMapper
-import SafariServices
+import RxDataSources
 
-let minimumSessions = 0
+let minimumSessions = 4
 let maybeLaterSessions = minimumSessions + 8
 
 class SpotsTableViewController: UIViewController {
