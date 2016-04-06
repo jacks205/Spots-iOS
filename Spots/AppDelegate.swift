@@ -15,42 +15,54 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        
-        
-        UINavigationBar.appearance().barTintColor = SpotsAppearance.Background
-        
-        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        setupAppearances()
         
         if !SpotsSharedDefaults.boolForKey("neverRate") {
-            let totalLaunches = SpotsSharedDefaults.integerForKey("launches")
-            SpotsSharedDefaults.setInteger(totalLaunches + 1, forKey: "launches")
+            incrementLaunchCount()
         }
         
-        #if DEBUG
-            SpotsSharedDefaults.setObject(nil, forKey: "school")
-            Crashlytics().debugMode = true
-        #endif
+        setupFabric()
         
-        if SpotsSharedDefaults.stringForKey("school") != nil {
-            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let spotsVc = mainStoryboard.instantiateInitialViewController()
-            let nvc = UINavigationController(rootViewController: spotsVc!)
-            window?.rootViewController = nvc
-        } else {
-            let selectionStoryboard = UIStoryboard(name: "SchoolSelection", bundle: nil)
-            let selectionVC = selectionStoryboard.instantiateInitialViewController()
-            window?.rootViewController = selectionVC
-        }
-        
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        window?.rootViewController = getStartingViewController()
         window?.makeKeyAndVisible()
-        
-        
-        Fabric.with([Crashlytics.self])
         
         return true
     }
 
+}
+
+private func getStartingViewController() -> UIViewController {
+    #if DEBUG
+        SpotsSharedDefaults.setObject(nil, forKey: "school")
+    #endif
+    
+    guard SpotsSharedDefaults.stringForKey("school") != nil else {
+        let selectionStoryboard = UIStoryboard(name: "SchoolSelection", bundle: nil)
+        let selectionVC = selectionStoryboard.instantiateInitialViewController()
+        return selectionVC!
+    }
+    
+    let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+    let spotsVc = mainStoryboard.instantiateInitialViewController()
+    let nvc = UINavigationController(rootViewController: spotsVc!)
+    return nvc
+}
+
+private func incrementLaunchCount() {
+    let totalLaunches = SpotsSharedDefaults.integerForKey("launches")
+    SpotsSharedDefaults.setInteger(totalLaunches + 1, forKey: "launches")
+}
+
+private func setupAppearances() {
+    UINavigationBar.appearance().barTintColor = SpotsAppearance.Background
+}
+
+private func setupFabric() {
+    #if DEBUG
+        Crashlytics().debugMode = true
+    #endif
+    Fabric.with([Crashlytics.self])
 }

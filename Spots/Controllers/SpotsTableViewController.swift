@@ -29,6 +29,20 @@ class SpotsTableViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupAppearance()
+        setupTableView()
+        setupRefreshControl()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let neverRate = SpotsSharedDefaults.boolForKey("neverRate")
+        let totalLaunches = Variable(SpotsSharedDefaults.integerForKey("launches"))
+        setupRateAppController(neverRate, totalLaunches: totalLaunches)
+    }
+    
+    private func setupAppearance() {
         if let smallerFont = UIFont(name: "OpenSans", size: 11) {
             title = "PARKING STRUCTURES"
             navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: smallerFont, NSForegroundColorAttributeName: UIColor(red: 1, green: 1, blue: 1, alpha: 0.48)]
@@ -40,17 +54,6 @@ class SpotsTableViewController: UIViewController {
         navigationController?.navigationBar.translucent = false
         navigationItem.setHidesBackButton(true, animated: false)
         navigationController?.setNavigationBarHidden(false, animated: true)
-            
-        setupTableView()
-        setupRefreshControl()
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        let neverRate = SpotsSharedDefaults.boolForKey("neverRate")
-        let totalLaunches = Variable(SpotsSharedDefaults.integerForKey("launches"))
-        setupRateAppController(neverRate, totalLaunches: totalLaunches)
     }
     
     private func setupTableView() {
