@@ -18,11 +18,12 @@ pod install
 ```
 
 TODO:
-- Unit Tests
 - ~~Today Extension~~
 - ~~Crashlytics integration~~
-- Add more schools (CSUF)
 - ~~Rate app logic~~
+- Add more schools (CSUF)
+- Unit Tests
+- Spots filling animations
 
 ## Current Design Scheme
 
