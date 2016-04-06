@@ -3,13 +3,17 @@ platform :ios, '9.0'
 # Uncomment this line if you're using Swift
 use_frameworks!
 
+def shared_pods
+    pod 'Fabric'
+    pod 'Crashlytics'
+    pod 'RxSwift'
+    pod 'Moya-ObjectMapper/RxSwift', '1.2'
+    pod 'RxCocoa', '2.3.1'
+    pod 'RxDataSources'
+end
+
 target 'Spots' do
-pod 'Fabric'
-pod 'Crashlytics'
-pod 'RxSwift'
-pod 'Moya-ObjectMapper/RxSwift', '1.2'
-pod 'RxCocoa', '2.3.1'
-pod 'RxDataSources'
+    shared_pods
 end
 
 target 'SpotsTests' do
@@ -17,10 +21,5 @@ target 'SpotsTests' do
 end
 
 target 'SpotsToday' do
-    pod 'Fabric'
-    pod 'Crashlytics'
-    pod 'RxSwift'
-    pod 'Moya-ObjectMapper/RxSwift', '1.2'
-    pod 'RxCocoa', '2.3.1'
-    pod 'RxDataSources'
+    shared_pods
 end

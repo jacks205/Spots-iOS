@@ -20,9 +20,9 @@ pod install
 TODO:
 - Unit Tests
 - ~~Today Extension~~
-- Crashlytics integration
+- ~~Crashlytics integration~~
 - Add more schools (CSUF)
-
+- Rate app logic
 
 ## Current Design Scheme
 
