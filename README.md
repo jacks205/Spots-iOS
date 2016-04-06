@@ -21,7 +21,7 @@ TODO:
 - ~~Today Extension~~
 - ~~Crashlytics integration~~
 - ~~Rate app logic~~
-- Change collection view delegates to use RxDataSources like in Today Extension
+- ~~Change collection view delegates to use RxDataSources like in Today Extension~~
 - Add more schools (CSUF)
 - Unit Tests
 - Spots structure filling animations

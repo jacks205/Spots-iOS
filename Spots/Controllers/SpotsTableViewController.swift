@@ -11,9 +11,9 @@ import RxSwift
 import RxCocoa
 import Moya
 import Moya_ObjectMapper
-import SafariServices
+import RxDataSources
 
-let minimumSessions = 0
+let minimumSessions = 4
 let maybeLaterSessions = minimumSessions + 8
 
 class SpotsTableViewController: UIViewController {
@@ -162,46 +162,9 @@ extension SpotsTableViewController : UITableViewDelegate {
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         if let spotsCell = cell as? SpotsTableViewCell {
-            spotsCell.setCollectionViewDataSourceDelegate(self, withDelegate: self, atIndexPath: indexPath)
+            let structure = structures.value[indexPath.row]
+            spotsCell.setCollectionViewStructure(structure, atIndexPath: indexPath)
         }
-    }
-    
-}
-
-extension SpotsTableViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
-        let cvWidth = collectionView.bounds.width / 5
-        return cvWidth - 50
-    }
-    
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
-    }
-    
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let levelCell : UICollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("LevelCell", forIndexPath: indexPath)
-        
-        guard let spotsCollectionCell = collectionView as? SpotsIndexedCollectionView, let spotsCircleCollectionCell = levelCell as? SpotsCircleCollectionViewCell else {
-            return levelCell
-        }
-        
-        let row = spotsCollectionCell.indexPath.row
-        let levelRow = indexPath.row
-        let structure = structures.value[row]
-        
-        guard levelRow < structure.levels.count else {
-            let emptyCell = collectionView.dequeueReusableCellWithReuseIdentifier("EmptyCell", forIndexPath: indexPath)
-            return emptyCell
-        }
-        
-        let level = structure.levels[levelRow]
-        spotsCircleCollectionCell.spotsCircleView.countLabel.text = "\(level.available)"
-        spotsCircleCollectionCell.spotsCircleView.titleLabel.text = "LEVEL \(level.name)"
-        spotsCircleCollectionCell.spotsCircleView.spotsCircleView.setCapacityLevel(CGFloat(level.available), outOfTotalCapacity: CGFloat(level.total))
-        spotsCircleCollectionCell.spotsCircleView.spotsCircleView.animateCircle(Double(row) * 0.35 + Double(levelRow) * 0.15)
-        
-        return levelCell
     }
     
 }
