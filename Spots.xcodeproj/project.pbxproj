@@ -50,6 +50,7 @@
 		EAD96F041CB3072600E1BF73 /* SpotsCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2A92851CB2654700DAC302 /* SpotsCircleView.swift */; };
 		EAD96F051CB3073E00E1BF73 /* EmptyCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD96EDC1CB285E400E1BF73 /* EmptyCircleView.swift */; };
 		EAD96F071CB308E200E1BF73 /* SpotsTodayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD96F061CB308E200E1BF73 /* SpotsTodayCollectionViewCell.swift */; };
+		EAF30C441CB520320087F62F /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EAF30C431CB520320087F62F /* Settings.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +137,7 @@
 		EAD96EF11CB3018E00E1BF73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAD96F021CB3051E00E1BF73 /* SpotsTodayButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotsTodayButton.swift; sourceTree = "<group>"; };
 		EAD96F061CB308E200E1BF73 /* SpotsTodayCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotsTodayCollectionViewCell.swift; sourceTree = "<group>"; };
+		EAF30C431CB520320087F62F /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = SupportingFiles/Settings.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +245,7 @@
 				EA2A92771CAEF49D00DAC302 /* ActivityIndicator.swift */,
 				EA2A927F1CB2244F00DAC302 /* SpotsConfiguration.h */,
 				EA2A92801CB240ED00DAC302 /* SpotsAppearance.swift */,
+				EAF30C431CB520320087F62F /* Settings.bundle */,
 			);
 			name = "Support Files";
 			sourceTree = "<group>";
@@ -452,6 +455,7 @@
 				EAD96ED41CB2849500E1BF73 /* OpenSans-Italic.ttf in Resources */,
 				EAD96ED01CB2849500E1BF73 /* OpenSans-Bold.ttf in Resources */,
 				EAD96ED21CB2849500E1BF73 /* OpenSans-ExtraBold.ttf in Resources */,
+				EAF30C441CB520320087F62F /* Settings.bundle in Resources */,
 				EAD96ED11CB2849500E1BF73 /* OpenSans-BoldItalic.ttf in Resources */,
 				EA2A92881CB2670F00DAC302 /* SpotsCircleDataView.xib in Resources */,
 				EA06CCFD1CADF811007F5851 /* Main.storyboard in Resources */,
