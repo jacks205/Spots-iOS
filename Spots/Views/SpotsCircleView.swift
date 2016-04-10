@@ -50,8 +50,6 @@ import UIKit
             cl.addAnimation(anim, forKey: anim.keyPath)
             
         }
-        
-        
     }
     
     func setCapacityLevel(currentCapacity : CGFloat, outOfTotalCapacity totalCapacity : CGFloat) {

@@ -14,26 +14,18 @@ struct SpotsResponse: Mappable {
     
     var structures : [Structure]!
     var lastUpdated : String!
-    var lastUpdatedISO : String!
     var id : String!
-    
-    var lastUpdatedDate : NSDate? {
-        let dateFormatter: NSDateFormatter = NSDateFormatter()
-        dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
-        dateFormatter.timeZone = NSTimeZone(abbreviation: "UTC")
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSX"
-        return dateFormatter.dateFromString(lastUpdatedISO)
+    var lastUpdatedDate : NSDate {
+        return lastUpdated.dateWithFormat("yyyy-MM-dd'T'HH:mm:ss.SSSX", timezone: "UTC")
     }
     
     init?(_ map: Map) { }
     
     mutating func mapping(map: Map) {
         structures <- map["structures"]
-        lastUpdated <- map["lastUpdated"]
-        lastUpdatedISO <- map["lastUpdatedISO"]
+        lastUpdated <- map["lastUpdatedISO"]
         id <- map["_id"]
     }
-    
 }
 
 struct Structure: Mappable {
@@ -43,6 +35,10 @@ struct Structure: Mappable {
     var name : String!
     var nickname : String!
     var total : Int!
+    var lastUpdated : String!
+    var lastUpdatedDate : NSDate {
+        return lastUpdated.dateWithFormat("yyyy-MM-dd'T'HH:mm:ss.SSSX", timezone: "UTC")
+    }
     
     init?(_ map: Map) { }
     
@@ -54,10 +50,8 @@ struct Structure: Mappable {
         name <- map["name"]
         nickname <- map["nickname"]
         total <- map["total"]
+        lastUpdated <- map["lastUpdated"]
     }
-    
-    
-
 }
 
 struct Level : Mappable {
@@ -151,4 +145,30 @@ public func timeAgoSinceDate(date:NSDate, numericDates:Bool) -> String {
         return "just now"
     }
     
+}
+
+extension NSDate {
+    func formattedString(dateFormat : String, timezone : String) -> String {
+        let dateFormatter = getDateFormatter(dateFormat, timezone: timezone)
+        return dateFormatter.stringFromDate(self)
+    }
+    
+    func timeAgoString() -> String {
+        return timeAgoSinceDate(self, numericDates: true)
+    }
+}
+
+extension String {
+    func dateWithFormat(dateFormat : String, timezone : String) -> NSDate {
+        let dateFormatter = getDateFormatter(dateFormat, timezone: timezone)
+        return dateFormatter.dateFromString(self)!
+    }
+}
+
+public func getDateFormatter(dateFormat : String, timezone : String) -> NSDateFormatter {
+    let dateFormatter: NSDateFormatter = NSDateFormatter()
+    dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+    dateFormatter.timeZone = NSTimeZone(abbreviation: timezone)
+    dateFormatter.dateFormat = dateFormat
+    return dateFormatter
 }

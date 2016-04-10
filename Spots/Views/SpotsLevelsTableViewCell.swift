@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 import RxDataSources
 
-class SpotsTableViewCell: UITableViewCell, UICollectionViewDelegate {
+class SpotsLevelsTableViewCell: UITableViewCell, UICollectionViewDelegate {
     
     @IBOutlet weak var collectionView: SpotsIndexedCollectionView!
     

@@ -22,10 +22,12 @@ class SpotsTableViewController: UIViewController {
     
     var structures : Variable<[Structure]> = Variable([])
     var refreshControl : UIRefreshControl?
-    var provider : SpotsAPIProvider = SpotsProvider
+    var school = School.CU
     
     let activityIndicator = ActivityIndicator()
     let db = DisposeBag()
+    
+    var lastUpdated = NSDate()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,9 +42,11 @@ class SpotsTableViewController: UIViewController {
         let neverRate = SpotsSharedDefaults.boolForKey("neverRate")
         let totalLaunches = Variable(SpotsSharedDefaults.integerForKey("launches"))
         setupRateAppController(neverRate, totalLaunches: totalLaunches)
+        
+        refreshControl?.attributedTitle = self.getLastUpdatedAttributedString("Updated " + timeAgoSinceDate(lastUpdated, numericDates: true))
     }
     
-    private func setupAppearance() {
+    internal func setupAppearance() {
         if let smallerFont = UIFont(name: "OpenSans", size: 11) {
             title = "PARKING STRUCTURES"
             navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: smallerFont, NSForegroundColorAttributeName: UIColor(red: 1, green: 1, blue: 1, alpha: 0.48)]
@@ -56,28 +60,27 @@ class SpotsTableViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
-    private func setupTableView() {
+    internal func setupTableView() {
         tableView
             .rx_setDelegate(self)
             .addDisposableTo(db)
-        
-        structures.asObservable()
-            .bindTo(tableView.rx_itemsWithCellIdentifier("Cell", cellType: SpotsTableViewCell.self)) { (row, structure, cell) in
-                cell.selectionStyle = .None
-                cell.title.text = structure.name.capitalizedString
-                cell.totalSpots.text = "\(structure.available) spots available"
-            }
-            .addDisposableTo(db)
     }
     
-    private func setupRefreshControl() {
+    internal func setupRefreshControl() {
         refreshControl = UIRefreshControl()
         
+        refreshControl?.beginRefreshing()
         refreshControl?.rx_controlEvent(.ValueChanged)
             .startWith(())
-            .flatMapLatest { [unowned self] (_) in
-                return self.getParkingDataFromProvider()
-                    .trackActivity(self.activityIndicator)
+            .flatMapLatest { [unowned self] (_) -> Observable<SpotsResponse> in
+                switch self.school {
+                case .CU:
+                    return getCUParkingData()
+                        .trackActivity(self.activityIndicator)
+                case .CSUF:
+                    return getCSUFParkingData(self.db)
+                        .trackActivity(self.activityIndicator)
+                }
             }
             .subscribe { [unowned self] (event) in
                 self.parseNetworkEvent(event)
@@ -91,7 +94,7 @@ class SpotsTableViewController: UIViewController {
         tableView.insertSubview(refreshControl!, atIndex: 0)
     }
     
-    private func setupRateAppController(neverRate : Bool, totalLaunches : Variable<Int>) {
+    internal func setupRateAppController(neverRate : Bool, totalLaunches : Variable<Int>) {
         totalLaunches.asObservable()
             .filter { !neverRate && ($0 == minimumSessions + 1 || $0 > minimumSessions + maybeLaterSessions) }
             .subscribeNext { launches in
@@ -101,7 +104,7 @@ class SpotsTableViewController: UIViewController {
             .addDisposableTo(db)
     }
     
-    private func presentRateController() {
+    internal func presentRateController() {
         let alert = UIAlertController(title: "Rate Us", message: "Thanks for using Spots. Please go rate us in the App Store!", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Rate Spots", style: UIAlertActionStyle.Default, handler: { alertAction in
             let appStoreUrl = NSURL(string: APP_STORE_URL)!
@@ -124,15 +127,16 @@ class SpotsTableViewController: UIViewController {
 
     //MARK: - Spots Requests
     
-    private func getParkingDataFromProvider() -> Observable<SpotsResponse> {
-        return SpotsAPI.getSpotsData(provider)
-    }
-    
-    private func parseNetworkEvent(event : Event<SpotsResponse>) {
+    internal func parseNetworkEvent(event : Event<SpotsResponse>) {
         switch event {
         case .Next(let res):
+            self.lastUpdated = NSDate()
             self.structures.value = res.structures
-            self.refreshControl?.attributedTitle = self.getLastUpdatedAttributedString("Updated " + timeAgoSinceDate(res.lastUpdatedDate!, numericDates: true))
+            if res.lastUpdated != nil {
+                self.refreshControl?.attributedTitle = self.getLastUpdatedAttributedString("Updated \(res.lastUpdatedDate.timeAgoString())")
+            } else {
+                self.refreshControl?.attributedTitle = self.getLastUpdatedAttributedString("Updated \(self.lastUpdated.timeAgoString())")
+            }
             break
         case .Error(let err):
             print(err)
@@ -143,7 +147,7 @@ class SpotsTableViewController: UIViewController {
     }
     
     //MARK: - Helper Methods
-    private func getLastUpdatedAttributedString(string : String) -> NSAttributedString {
+    internal func getLastUpdatedAttributedString(string : String) -> NSAttributedString {
         return NSAttributedString(string: string, attributes:
             [
                 NSFontAttributeName: UIFont(name: "OpenSans", size: 11)!,
@@ -158,13 +162,6 @@ extension SpotsTableViewController : UITableViewDelegate {
     
     func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
         return .None
-    }
-    
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        if let spotsCell = cell as? SpotsTableViewCell {
-            let structure = structures.value[indexPath.row]
-            spotsCell.setCollectionViewStructure(structure, atIndexPath: indexPath)
-        }
     }
     
 }

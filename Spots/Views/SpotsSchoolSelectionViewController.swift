@@ -17,7 +17,7 @@ class SpotsSchoolSelectionViewController: UIViewController, UITableViewDelegate 
     
     let db = DisposeBag()
     
-    var schools : Observable<[String]> = Observable.just(["Chapman University"])
+    var schools : Variable<[School]> = Variable([.CU, .CSUF])
     var schoolSelected : Variable<Bool> = Variable(false)
     var indexSelected : Variable<NSIndexPath> = Variable(NSIndexPath())
     
@@ -32,27 +32,39 @@ class SpotsSchoolSelectionViewController: UIViewController, UITableViewDelegate 
         return .None
     }
     
-    func setupTableView(schools : Observable<[String]>) {
+    func setupTableView(schools : Variable<[School]>) {
         tableView
             .rx_setDelegate(self)
             .addDisposableTo(db)
         
         schools
+            .asObservable()
             .bindTo(tableView.rx_itemsWithCellIdentifier("SchoolCell", cellType: SpotsSchoolTableViewCell.self)) { (row, school, cell) in
-                cell.schoolTextLabel.text = school
+                if row == schools.value.count - 1 { cell.isBottomCell = true }
+                cell.schoolTextLabel.text = school.rawValue
             }
             .addDisposableTo(db)
         
         tableView
             .rx_itemSelected
             .subscribeNext { (indexPath) in
-                self.indexSelected.value = indexPath
+                print("Selected: \(indexPath.row)")
                 if let cell =  self.tableView.cellForRowAtIndexPath(indexPath) as? SpotsSchoolTableViewCell {
                     cell.selected = !self.schoolSelected.value
                     self.schoolSelected.value = !self.schoolSelected.value
                 }
+                self.indexSelected.value = indexPath
             }
             .addDisposableTo(db)
+        
+        tableView
+            .rx_itemDeselected
+            .subscribeNext { (indexPath) in
+                print("Deselected: \(indexPath.row)")
+                self.schoolSelected.value = false
+            }
+            .addDisposableTo(db)
+        
         
     }
     
@@ -61,11 +73,17 @@ class SpotsSchoolSelectionViewController: UIViewController, UITableViewDelegate 
             .rx_tap
             .subscribeNext {
                 self.schools
+                    .asObservable()
                     .throttle(0.1, scheduler: MainScheduler.instance)
                     .subscribeNext { schools in
                     let selectedSchool = schools[self.indexSelected.value.row]
                     self.saveSchoolToUserDefaults(selectedSchool)
-                    self.performSegueWithIdentifier("choseSchool", sender: self)
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let schoolType = SpotsVCType.getTypeFromSchool(selectedSchool)
+                    if let spotsVc = storyboard.instantiateViewControllerWithIdentifier(schoolType.rawValue) as? SpotsTableViewController {
+                        spotsVc.school = selectedSchool
+                        self.navigationController?.pushViewController(spotsVc, animated: true)
+                    }
                 }
                 .addDisposableTo(self.db)
             }
@@ -90,8 +108,9 @@ class SpotsSchoolSelectionViewController: UIViewController, UITableViewDelegate 
             .addDisposableTo(db)
     }
     
-    func saveSchoolToUserDefaults(school : String) {
-        SpotsSharedDefaults.setObject(school, forKey: "school")
+    func saveSchoolToUserDefaults(school : School) {
+        NSUserDefaults.standardUserDefaults().setObject(school.rawValue, forKey: "SettingsBundleSchoolSelected")
+        SpotsSharedDefaults.setObject(school.rawValue, forKey: "school")
     }
 
 }

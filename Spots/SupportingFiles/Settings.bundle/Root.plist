@@ -10,6 +10,34 @@
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 			<key>Title</key>
+			<string>Restart Spots to change school</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>School</string>
+			<key>Key</key>
+			<string>SettingsBundleSchoolSelected</string>
+			<key>DefaultValue</key>
+			<string>None</string>
+			<key>Titles</key>
+			<array>
+				<string>None</string>
+				<string>Chapman University</string>
+				<string>Cal State University Fullerton</string>
+			</array>
+			<key>Values</key>
+			<array>
+				<string>None</string>
+				<string>Chapman University</string>
+				<string>Cal State University Fullerton</string>
+			</array>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
 			<string>About</string>
 		</dict>
 		<dict>

@@ -7,16 +7,19 @@
     <customFonts key="customFonts">
         <mutableArray key="OpenSans-Light.ttf">
             <string>OpenSans-Light</string>
+            <string>OpenSans-Light</string>
+            <string>OpenSans-Light</string>
         </mutableArray>
         <mutableArray key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
             <string>OpenSans</string>
         </mutableArray>
     </customFonts>
     <scenes>
-        <!--Spots Table View Controller-->
+        <!--Spots Levels Table View Controller-->
         <scene sceneID="5Ec-cu-Ixk">
             <objects>
-                <viewController id="hPd-hK-MVB" customClass="SpotsTableViewController" customModule="Spots" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Levels" id="hPd-hK-MVB" customClass="SpotsLevelsTableViewController" customModule="Spots" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Bzu-Br-0Ud"/>
                         <viewControllerLayoutGuide type="bottom" id="lKI-Sg-A3I"/>
@@ -31,26 +34,26 @@
                                 <color key="separatorColor" white="1" alpha="0.22" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="Cell" rowHeight="158" id="1HC-iu-g5Q" customClass="SpotsTableViewCell" customModule="Spots" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="LevelsCell" rowHeight="158" id="1HC-iu-g5Q" customClass="SpotsLevelsTableViewCell" customModule="Spots" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="158"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1HC-iu-g5Q" id="YYH-kH-kPO">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="157.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="158"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lastinger" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7DL-KI-GNb">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Lastinger" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7DL-KI-GNb">
                                                     <rect key="frame" x="14" y="8" width="78" height="25"/>
                                                     <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="18"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999 spots available" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sp9-4H-IDg">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="999 spots available" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sp9-4H-IDg">
                                                     <rect key="frame" x="14" y="29" width="116" height="19"/>
                                                     <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="13.5"/>
                                                     <color key="textColor" white="1" alpha="0.58999999999999997" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9z7-K9-Oh4" customClass="SpotsIndexedCollectionView" customModule="Spots" customModuleProvider="target">
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9z7-K9-Oh4" customClass="SpotsIndexedCollectionView" customModule="Spots" customModuleProvider="target">
                                                     <rect key="frame" x="14" y="60" width="292" height="86"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="10" id="VCS-8J-PiR">
@@ -89,7 +92,7 @@
                                                             </connections>
                                                         </collectionViewCell>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EmptyCell" id="H1w-Z8-WRn" customClass="SpotsCircleCollectionViewCell" customModule="Spots" customModuleProvider="target">
-                                                            <rect key="frame" x="60.5" y="0.0" width="50" height="85"/>
+                                                            <rect key="frame" x="61" y="0.0" width="50" height="85"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="85"/>
@@ -156,6 +159,98 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B2l-tk-Aij" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1040" y="296"/>
+        </scene>
+        <!--Spots No Levels Table View Controller-->
+        <scene sceneID="fcX-tY-KjJ">
+            <objects>
+                <viewController storyboardIdentifier="NoLevels" id="gHt-lC-23h" customClass="SpotsNoLevelsTableViewController" customModule="Spots" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dUH-iu-ufh"/>
+                        <viewControllerLayoutGuide type="bottom" id="FqI-hi-Pzn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tbu-fr-pXr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="210" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ww8-0a-KJX">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" red="0.086274509799999996" green="0.10980392160000001" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="separatorColor" white="1" alpha="0.22" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="NoLevelsCell" rowHeight="207" id="jTz-2D-Z4T" customClass="SpotsNoLevelsTableViewCell" customModule="Spots" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="207"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jTz-2D-Z4T" id="dsm-V0-IC5">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="207"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Lastinger" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vR9-0Z-bc0">
+                                                    <rect key="frame" x="121" y="8" width="78" height="25"/>
+                                                    <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="18"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="999 spots available" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cY-gL-5GC">
+                                                    <rect key="frame" x="102" y="29" width="116" height="19"/>
+                                                    <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="13.5"/>
+                                                    <color key="textColor" white="1" alpha="0.58999999999999997" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AMj-lq-TSp" customClass="SpotsPercentageCircleDataView" customModule="Spots" customModuleProvider="target">
+                                                    <rect key="frame" x="100" y="56" width="120" height="120"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="120" id="JPM-nh-cBs"/>
+                                                        <constraint firstAttribute="width" constant="120" id="YgG-jd-N3G"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Updated 999 minutes ago" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3wk-j3-G4K">
+                                                    <rect key="frame" x="183" y="184" width="129" height="15"/>
+                                                    <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="11"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="0.47999999999999998" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.086274509799999996" green="0.10980392160000001" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="AMj-lq-TSp" firstAttribute="centerX" secondItem="dsm-V0-IC5" secondAttribute="centerX" id="5Fe-1X-aJK"/>
+                                                <constraint firstItem="3wk-j3-G4K" firstAttribute="trailing" secondItem="dsm-V0-IC5" secondAttribute="trailingMargin" id="9DW-jW-F8o"/>
+                                                <constraint firstItem="3wk-j3-G4K" firstAttribute="bottom" secondItem="dsm-V0-IC5" secondAttribute="bottomMargin" id="Iz5-Kg-gUz"/>
+                                                <constraint firstItem="1cY-gL-5GC" firstAttribute="centerX" secondItem="dsm-V0-IC5" secondAttribute="centerX" id="K8V-nr-BBx"/>
+                                                <constraint firstItem="vR9-0Z-bc0" firstAttribute="top" secondItem="dsm-V0-IC5" secondAttribute="topMargin" id="KZt-oC-5T0"/>
+                                                <constraint firstItem="vR9-0Z-bc0" firstAttribute="centerX" secondItem="dsm-V0-IC5" secondAttribute="centerX" id="VPZ-Cm-gLT"/>
+                                                <constraint firstItem="1cY-gL-5GC" firstAttribute="top" secondItem="vR9-0Z-bc0" secondAttribute="bottom" constant="-4" id="ZqY-yH-C0N"/>
+                                                <constraint firstItem="AMj-lq-TSp" firstAttribute="top" secondItem="1cY-gL-5GC" secondAttribute="bottom" constant="8" id="kY9-FU-erX"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.086274509799999996" green="0.10980392160000001" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="lastUpdated" destination="3wk-j3-G4K" id="5Ef-lv-Kjb"/>
+                                            <outlet property="percentageCircleDataView" destination="AMj-lq-TSp" id="TLC-T6-ehv"/>
+                                            <outlet property="title" destination="vR9-0Z-bc0" id="AXk-xk-pSn"/>
+                                            <outlet property="totalSpots" destination="1cY-gL-5GC" id="BxA-Gs-EGs"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ww8-0a-KJX" firstAttribute="bottom" secondItem="FqI-hi-Pzn" secondAttribute="top" id="1dm-Eb-43m"/>
+                            <constraint firstAttribute="trailing" secondItem="Ww8-0a-KJX" secondAttribute="trailing" id="4ih-rc-6Zz"/>
+                            <constraint firstItem="Ww8-0a-KJX" firstAttribute="leading" secondItem="tbu-fr-pXr" secondAttribute="leading" id="U6U-qm-NcC"/>
+                            <constraint firstItem="Ww8-0a-KJX" firstAttribute="top" secondItem="tbu-fr-pXr" secondAttribute="top" id="t0d-uC-86O"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="kmy-xf-fgC"/>
+                    <connections>
+                        <outlet property="tableView" destination="Ww8-0a-KJX" id="RoT-BW-1NO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kum-cr-9kb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1418" y="296"/>
         </scene>
     </scenes>
 </document>

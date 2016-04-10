@@ -18,12 +18,21 @@
 		EA06CD2D1CAE7A53007F5851 /* SpotsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA06CD2C1CAE7A53007F5851 /* SpotsAPI.swift */; };
 		EA06CD311CAE7F5B007F5851 /* SpotsResponseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA06CD301CAE7F5B007F5851 /* SpotsResponseModels.swift */; };
 		EA2A92781CAEF49D00DAC302 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2A92771CAEF49D00DAC302 /* ActivityIndicator.swift */; };
-		EA2A927A1CB1F1F100DAC302 /* SpotsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2A92791CB1F1F100DAC302 /* SpotsTableViewCell.swift */; };
+		EA2A927A1CB1F1F100DAC302 /* SpotsLevelsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2A92791CB1F1F100DAC302 /* SpotsLevelsTableViewCell.swift */; };
 		EA2A927C1CB1F26900DAC302 /* SchoolSelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA2A927B1CB1F26900DAC302 /* SchoolSelection.storyboard */; };
 		EA2A927E1CB1F2F900DAC302 /* SpotsSchoolSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2A927D1CB1F2F900DAC302 /* SpotsSchoolSelectionViewController.swift */; };
 		EA2A92811CB240ED00DAC302 /* SpotsAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2A92801CB240ED00DAC302 /* SpotsAppearance.swift */; };
 		EA2A92861CB2654700DAC302 /* SpotsCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2A92851CB2654700DAC302 /* SpotsCircleView.swift */; };
 		EA2A92881CB2670F00DAC302 /* SpotsCircleDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA2A92871CB2670F00DAC302 /* SpotsCircleDataView.xib */; };
+		EAAE9EDF1CB78555008E5D04 /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD83C921CB7596500B44591 /* School.swift */; };
+		EAD83C931CB7596500B44591 /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD83C921CB7596500B44591 /* School.swift */; };
+		EAD83C951CB75CF000B44591 /* SpotsVCType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD83C941CB75CF000B44591 /* SpotsVCType.swift */; };
+		EAD83C971CB75E0900B44591 /* SpotsLevelsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD83C961CB75E0900B44591 /* SpotsLevelsTableViewController.swift */; };
+		EAD83C991CB75E2000B44591 /* SpotsNoLevelsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD83C981CB75E2000B44591 /* SpotsNoLevelsTableViewController.swift */; };
+		EAD83C9B1CB7642F00B44591 /* SpotsNoLevelsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD83C9A1CB7642F00B44591 /* SpotsNoLevelsTableViewCell.swift */; };
+		EAD83C9D1CB765C900B44591 /* SpotsPercentageCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD83C9C1CB765C900B44591 /* SpotsPercentageCircleView.swift */; };
+		EAD83CA11CB7674F00B44591 /* SpotsPercentageCircleDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD83CA01CB7674F00B44591 /* SpotsPercentageCircleDataView.swift */; };
+		EAD83CA31CB7676900B44591 /* SpotsPercentageCircleDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAD83CA21CB7676900B44591 /* SpotsPercentageCircleDataView.xib */; };
 		EAD96ED01CB2849500E1BF73 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EAD96EC61CB2849500E1BF73 /* OpenSans-Bold.ttf */; };
 		EAD96ED11CB2849500E1BF73 /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EAD96EC71CB2849500E1BF73 /* OpenSans-BoldItalic.ttf */; };
 		EAD96ED21CB2849500E1BF73 /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EAD96EC81CB2849500E1BF73 /* OpenSans-ExtraBold.ttf */; };
@@ -106,7 +115,7 @@
 		EA06CD2E1CAE7C89007F5851 /* Spots-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Spots-Bridging-Header.h"; path = "SupportingFiles/Spots-Bridging-Header.h"; sourceTree = "<group>"; };
 		EA06CD301CAE7F5B007F5851 /* SpotsResponseModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotsResponseModels.swift; path = Models/SpotsResponseModels.swift; sourceTree = "<group>"; };
 		EA2A92771CAEF49D00DAC302 /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicator.swift; path = SupportingFiles/ActivityIndicator.swift; sourceTree = "<group>"; };
-		EA2A92791CB1F1F100DAC302 /* SpotsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotsTableViewCell.swift; path = Views/SpotsTableViewCell.swift; sourceTree = "<group>"; };
+		EA2A92791CB1F1F100DAC302 /* SpotsLevelsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotsLevelsTableViewCell.swift; path = Views/SpotsLevelsTableViewCell.swift; sourceTree = "<group>"; };
 		EA2A927B1CB1F26900DAC302 /* SchoolSelection.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SchoolSelection.storyboard; path = Views/SchoolSelection.storyboard; sourceTree = "<group>"; };
 		EA2A927D1CB1F2F900DAC302 /* SpotsSchoolSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotsSchoolSelectionViewController.swift; path = Views/SpotsSchoolSelectionViewController.swift; sourceTree = "<group>"; };
 		EA2A927F1CB2244F00DAC302 /* SpotsConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SpotsConfiguration.h; path = SupportingFiles/SpotsConfiguration.h; sourceTree = "<group>"; };
@@ -115,6 +124,14 @@
 		EA2A92871CB2670F00DAC302 /* SpotsCircleDataView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SpotsCircleDataView.xib; path = Views/SpotsCircleDataView.xib; sourceTree = "<group>"; };
 		EA675E0C1CB319DC0058C0AB /* Spots.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Spots.entitlements; sourceTree = "<group>"; };
 		EA675E0D1CB31A150058C0AB /* SpotsToday.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SpotsToday.entitlements; sourceTree = "<group>"; };
+		EAD83C921CB7596500B44591 /* School.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = School.swift; path = Models/School.swift; sourceTree = "<group>"; };
+		EAD83C941CB75CF000B44591 /* SpotsVCType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotsVCType.swift; sourceTree = "<group>"; };
+		EAD83C961CB75E0900B44591 /* SpotsLevelsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotsLevelsTableViewController.swift; path = Controllers/SpotsLevelsTableViewController.swift; sourceTree = "<group>"; };
+		EAD83C981CB75E2000B44591 /* SpotsNoLevelsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotsNoLevelsTableViewController.swift; path = Controllers/SpotsNoLevelsTableViewController.swift; sourceTree = "<group>"; };
+		EAD83C9A1CB7642F00B44591 /* SpotsNoLevelsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotsNoLevelsTableViewCell.swift; path = Views/SpotsNoLevelsTableViewCell.swift; sourceTree = "<group>"; };
+		EAD83C9C1CB765C900B44591 /* SpotsPercentageCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotsPercentageCircleView.swift; path = Views/SpotsPercentageCircleView.swift; sourceTree = "<group>"; };
+		EAD83CA01CB7674F00B44591 /* SpotsPercentageCircleDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotsPercentageCircleDataView.swift; path = Views/SpotsPercentageCircleDataView.swift; sourceTree = "<group>"; };
+		EAD83CA21CB7676900B44591 /* SpotsPercentageCircleDataView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SpotsPercentageCircleDataView.xib; path = Views/SpotsPercentageCircleDataView.xib; sourceTree = "<group>"; };
 		EAD96EC61CB2849500E1BF73 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Bold.ttf"; path = "Fonts/OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		EAD96EC71CB2849500E1BF73 /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-BoldItalic.ttf"; path = "Fonts/OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
 		EAD96EC81CB2849500E1BF73 /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-ExtraBold.ttf"; path = "Fonts/OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
@@ -253,6 +270,8 @@
 		EA06CD271CADFFFA007F5851 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				EAD83C961CB75E0900B44591 /* SpotsLevelsTableViewController.swift */,
+				EAD83C981CB75E2000B44591 /* SpotsNoLevelsTableViewController.swift */,
 				EA06CD281CAE008D007F5851 /* SpotsTableViewController.swift */,
 				EA2A927D1CB1F2F900DAC302 /* SpotsSchoolSelectionViewController.swift */,
 			);
@@ -262,16 +281,20 @@
 		EA06CD2A1CAE009F007F5851 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				EA06CCFB1CADF811007F5851 /* Main.storyboard */,
 				EA06CD001CADF811007F5851 /* LaunchScreen.storyboard */,
-				EA2A92791CB1F1F100DAC302 /* SpotsTableViewCell.swift */,
+				EA06CCFB1CADF811007F5851 /* Main.storyboard */,
 				EA2A927B1CB1F26900DAC302 /* SchoolSelection.storyboard */,
-				EA2A92851CB2654700DAC302 /* SpotsCircleView.swift */,
-				EA2A92871CB2670F00DAC302 /* SpotsCircleDataView.xib */,
+				EA2A92791CB1F1F100DAC302 /* SpotsLevelsTableViewCell.swift */,
+				EAD83C9A1CB7642F00B44591 /* SpotsNoLevelsTableViewCell.swift */,
 				EAD96EDA1CB285B500E1BF73 /* SpotsSchoolTableViewCell.swift */,
+				EAD83C9C1CB765C900B44591 /* SpotsPercentageCircleView.swift */,
+				EAD83CA01CB7674F00B44591 /* SpotsPercentageCircleDataView.swift */,
+				EAD83CA21CB7676900B44591 /* SpotsPercentageCircleDataView.xib */,
+				EA2A92851CB2654700DAC302 /* SpotsCircleView.swift */,
+				EAD96EE01CB2865100E1BF73 /* SpotsCircleDataView.swift */,
+				EA2A92871CB2670F00DAC302 /* SpotsCircleDataView.xib */,
 				EAD96EDC1CB285E400E1BF73 /* EmptyCircleView.swift */,
 				EAD96EDE1CB2862300E1BF73 /* SpotsCircleCollectionViewCell.swift */,
-				EAD96EE01CB2865100E1BF73 /* SpotsCircleDataView.swift */,
 				EAD96EE21CB2867500E1BF73 /* SpotsIndexedCollectionView.swift */,
 			);
 			name = Views;
@@ -289,6 +312,8 @@
 			isa = PBXGroup;
 			children = (
 				EA06CD301CAE7F5B007F5851 /* SpotsResponseModels.swift */,
+				EAD83C921CB7596500B44591 /* School.swift */,
+				EAD83C941CB75CF000B44591 /* SpotsVCType.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -453,6 +478,7 @@
 				EAD96ED61CB2849500E1BF73 /* OpenSans-LightItalic.ttf in Resources */,
 				EA06CCFF1CADF811007F5851 /* Assets.xcassets in Resources */,
 				EAD96ED41CB2849500E1BF73 /* OpenSans-Italic.ttf in Resources */,
+				EAD83CA31CB7676900B44591 /* SpotsPercentageCircleDataView.xib in Resources */,
 				EAD96ED01CB2849500E1BF73 /* OpenSans-Bold.ttf in Resources */,
 				EAD96ED21CB2849500E1BF73 /* OpenSans-ExtraBold.ttf in Resources */,
 				EAF30C441CB520320087F62F /* Settings.bundle in Resources */,
@@ -607,20 +633,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAD83C951CB75CF000B44591 /* SpotsVCType.swift in Sources */,
 				EA2A92861CB2654700DAC302 /* SpotsCircleView.swift in Sources */,
 				EA06CD291CAE008D007F5851 /* SpotsTableViewController.swift in Sources */,
+				EAD83C971CB75E0900B44591 /* SpotsLevelsTableViewController.swift in Sources */,
+				EAD83CA11CB7674F00B44591 /* SpotsPercentageCircleDataView.swift in Sources */,
 				EAD96EE31CB2867500E1BF73 /* SpotsIndexedCollectionView.swift in Sources */,
 				EA2A92811CB240ED00DAC302 /* SpotsAppearance.swift in Sources */,
 				EAD96EDB1CB285B500E1BF73 /* SpotsSchoolTableViewCell.swift in Sources */,
-				EA2A927A1CB1F1F100DAC302 /* SpotsTableViewCell.swift in Sources */,
+				EA2A927A1CB1F1F100DAC302 /* SpotsLevelsTableViewCell.swift in Sources */,
 				EAD96EDD1CB285E400E1BF73 /* EmptyCircleView.swift in Sources */,
 				EA2A92781CAEF49D00DAC302 /* ActivityIndicator.swift in Sources */,
+				EAD83C9D1CB765C900B44591 /* SpotsPercentageCircleView.swift in Sources */,
 				EAD96EE11CB2865100E1BF73 /* SpotsCircleDataView.swift in Sources */,
 				EA06CCF81CADF811007F5851 /* AppDelegate.swift in Sources */,
 				EAD96EDF1CB2862300E1BF73 /* SpotsCircleCollectionViewCell.swift in Sources */,
 				EA2A927E1CB1F2F900DAC302 /* SpotsSchoolSelectionViewController.swift in Sources */,
 				EA06CD2D1CAE7A53007F5851 /* SpotsAPI.swift in Sources */,
+				EAD83C991CB75E2000B44591 /* SpotsNoLevelsTableViewController.swift in Sources */,
+				EAD83C931CB7596500B44591 /* School.swift in Sources */,
 				EA06CD311CAE7F5B007F5851 /* SpotsResponseModels.swift in Sources */,
+				EAD83C9B1CB7642F00B44591 /* SpotsNoLevelsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -640,6 +673,7 @@
 				EAD96F051CB3073E00E1BF73 /* EmptyCircleView.swift in Sources */,
 				EAD96F031CB3051E00E1BF73 /* SpotsTodayButton.swift in Sources */,
 				EAD96F001CB302F800E1BF73 /* SpotsResponseModels.swift in Sources */,
+				EAAE9EDF1CB78555008E5D04 /* School.swift in Sources */,
 				EAD96F011CB302FB00E1BF73 /* SpotsAPI.swift in Sources */,
 				EAD96EFF1CB3023B00E1BF73 /* SpotsAppearance.swift in Sources */,
 				EAD96F071CB308E200E1BF73 /* SpotsTodayCollectionViewCell.swift in Sources */,

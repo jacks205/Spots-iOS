@@ -10,6 +10,7 @@ def shared_pods
     pod 'Moya-ObjectMapper/RxSwift', '1.2'
     pod 'RxCocoa', '2.3.1'
     pod 'RxDataSources'
+    pod 'Kanna', '~> 1.0.0'
 end
 
 target 'Spots' do
