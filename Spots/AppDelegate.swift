@@ -45,7 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 private func getStartingViewController() -> UIViewController? {
     #if DEBUG
-        SpotsSharedDefaults.setObject(nil, forKey: "school")
+//        SpotsSharedDefaults.setObject(nil, forKey: "school")
     #endif
     
     guard let schoolString = SpotsSharedDefaults.stringForKey("school"), let school = School(rawValue: schoolString) else {
