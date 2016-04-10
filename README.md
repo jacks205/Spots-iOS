@@ -9,6 +9,7 @@ Written using:
 - [Moya](https://github.com/Moya/Moya)
 - [Moya-ObjectMapper](https://github.com/ivanbruel/Moya-ObjectMapper)
 - [RxDataSources](https://github.com/RxSwiftCommunity/RxDataSources)
+- [Kanna](https://github.com/tid-kijyun/Kanna)
 
 To contribute:
 
@@ -22,7 +23,7 @@ TODO:
 - ~~Crashlytics integration~~
 - ~~Rate app logic~~
 - ~~Change collection view delegates to use RxDataSources like in Today Extension~~
-- Add more schools (CSUF)
+- ~~Add more schools (CSUF)~~
 - Unit Tests
 - Spots structure filling animations
 
