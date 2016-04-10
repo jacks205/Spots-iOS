@@ -25,6 +25,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         setupFabric()
         
+        //Check settings bundle
+        if let settingsSchoolSelected = NSUserDefaults.standardUserDefaults().stringForKey("SettingsBundleSchoolSelected") {
+            if settingsSchoolSelected == "None" {
+                SpotsSharedDefaults.setObject(nil, forKey: "school")
+            } else {
+                SpotsSharedDefaults.setObject(settingsSchoolSelected, forKey: "school")
+            }
+        }
+        
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window?.rootViewController = getStartingViewController()
         window?.makeKeyAndVisible()
@@ -34,20 +43,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
-private func getStartingViewController() -> UIViewController {
+private func getStartingViewController() -> UIViewController? {
     #if DEBUG
         SpotsSharedDefaults.setObject(nil, forKey: "school")
     #endif
     
-    guard SpotsSharedDefaults.stringForKey("school") != nil else {
+    guard let schoolString = SpotsSharedDefaults.stringForKey("school"), let school = School(rawValue: schoolString) else {
         let selectionStoryboard = UIStoryboard(name: "SchoolSelection", bundle: nil)
         let selectionVC = selectionStoryboard.instantiateInitialViewController()
         return selectionVC!
     }
     
     let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-    let spotsVc = mainStoryboard.instantiateInitialViewController()
-    let nvc = UINavigationController(rootViewController: spotsVc!)
+    
+    let viewControllerType : SpotsVCType
+    switch school {
+    case .CU:
+        viewControllerType = .Levels
+        break
+    case .CSUF:
+        viewControllerType = .NoLevels
+        break
+    }
+    
+    guard let spotsVc = mainStoryboard.instantiateViewControllerWithIdentifier(viewControllerType.rawValue) as? SpotsTableViewController else {
+        return nil
+    }
+    
+    spotsVc.school = school
+    let nvc = UINavigationController(rootViewController: spotsVc)
     return nvc
 }
 

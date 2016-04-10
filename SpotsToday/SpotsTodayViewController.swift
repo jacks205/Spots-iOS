@@ -18,22 +18,22 @@ class SpotsTodayViewController: UIViewController, NCWidgetProviding {
     @IBOutlet weak var updatedLabel: UILabel!
     @IBOutlet weak var addSchoolBtn: SpotsTodayButton!
     
+    var school = School.CU
+    
     let dataSource = RxCollectionViewSectionedReloadDataSource<SectionModel<String, Structure>>()
-
-    var provider : SpotsAPIProvider = SpotsProvider
     
     let db = DisposeBag()
         
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard SpotsSharedDefaults.objectForKey("school") != nil else {
+        guard let schoolString = SpotsSharedDefaults.stringForKey("school") else {
             setupAndShowSelectSchoolView()
             return
         }
-
-        setupAndShowCollectionView()
         
+        school = School(rawValue: schoolString)!
+        setupAndShowCollectionView()
     }
     
     func setupAndShowSelectSchoolView() {
@@ -81,18 +81,25 @@ class SpotsTodayViewController: UIViewController, NCWidgetProviding {
             return cell
         }
         
-        getParkingDataFromProvider()
-            .subscribe { event in
-                self.parseNetworkEvent(event)
-            }
-            .addDisposableTo(db)
+        switch school {
+        case .CU:
+            getCUParkingData()
+                .subscribe { event in
+                    self.parseNetworkEvent(event)
+                }
+                .addDisposableTo(db)
+        case .CSUF:
+            getCSUFParkingData(db)
+                .subscribe { event in
+                    self.parseNetworkEvent(event)
+                }
+                .addDisposableTo(db)
+        }
+        
+        
     }
     
     //MARK: - Spots Requests
-    
-    private func getParkingDataFromProvider() -> Observable<SpotsResponse> {
-        return SpotsAPI.getSpotsData(provider)
-    }
     
     private func setStructuresDataSource(response : SpotsResponse) -> Observable<[SectionModel<String, Structure>]> {
         return Observable.create { observer -> Disposable in
@@ -113,7 +120,7 @@ class SpotsTodayViewController: UIViewController, NCWidgetProviding {
             setStructuresDataSource(res)
                 .bindTo(collectionView.rx_itemsWithDataSource(dataSource))
                 .addDisposableTo(self.db)
-            updatedLabel.text = "Updated \(timeAgoSinceDate(res.lastUpdatedDate!, numericDates: true))"
+            updatedLabel.text = "Updated \(res.lastUpdatedDate.timeAgoString())"
             break
         case .Error(let err):
             print(err)
