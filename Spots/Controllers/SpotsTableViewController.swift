@@ -91,6 +91,10 @@ class SpotsTableViewController: UIViewController {
             .bindTo(refreshControl!.rx_refreshing)
             .addDisposableTo(db)
         
+        activityIndicator.asObservable()
+            .bindTo(UIApplication.sharedApplication().rx_networkActivityIndicatorVisible)
+            .addDisposableTo(db)
+        
         tableView.insertSubview(refreshControl!, atIndex: 0)
     }
     

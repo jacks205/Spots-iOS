@@ -120,7 +120,12 @@ class SpotsTodayViewController: UIViewController, NCWidgetProviding {
             setStructuresDataSource(res)
                 .bindTo(collectionView.rx_itemsWithDataSource(dataSource))
                 .addDisposableTo(self.db)
-            updatedLabel.text = "Updated \(res.lastUpdatedDate.timeAgoString())"
+            if res.lastUpdated != nil {
+                updatedLabel.text = "Updated \(res.lastUpdatedDate.timeAgoString())"
+            } else {
+                updatedLabel.text = "Updated \(NSDate().timeAgoString())"
+            }
+            
             break
         case .Error(let err):
             print(err)
