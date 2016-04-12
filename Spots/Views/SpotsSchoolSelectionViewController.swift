@@ -48,7 +48,6 @@ class SpotsSchoolSelectionViewController: UIViewController, UITableViewDelegate 
         tableView
             .rx_itemSelected
             .subscribeNext { (indexPath) in
-                print("Selected: \(indexPath.row)")
                 if let cell =  self.tableView.cellForRowAtIndexPath(indexPath) as? SpotsSchoolTableViewCell {
                     cell.selected = !self.schoolSelected.value
                     self.schoolSelected.value = !self.schoolSelected.value
@@ -60,7 +59,6 @@ class SpotsSchoolSelectionViewController: UIViewController, UITableViewDelegate 
         tableView
             .rx_itemDeselected
             .subscribeNext { (indexPath) in
-                print("Deselected: \(indexPath.row)")
                 self.schoolSelected.value = false
             }
             .addDisposableTo(db)

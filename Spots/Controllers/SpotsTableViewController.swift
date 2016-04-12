@@ -43,7 +43,7 @@ class SpotsTableViewController: UIViewController {
         let totalLaunches = Variable(SpotsSharedDefaults.integerForKey("launches"))
         setupRateAppController(neverRate, totalLaunches: totalLaunches)
         
-        refreshControl?.attributedTitle = self.getLastUpdatedAttributedString("Updated " + timeAgoSinceDate(lastUpdated, numericDates: true))
+        refreshControl?.attributedTitle = self.getLastUpdatedAttributedString("Updated \(lastUpdated.timeAgoString())")
     }
     
     internal func setupAppearance() {
@@ -68,8 +68,9 @@ class SpotsTableViewController: UIViewController {
     
     internal func setupRefreshControl() {
         refreshControl = UIRefreshControl()
-        
+        refreshControl?.attributedTitle = getLastUpdatedAttributedString("Loading...")
         refreshControl?.beginRefreshing()
+        
         refreshControl?.rx_controlEvent(.ValueChanged)
             .startWith(())
             .flatMapLatest { [unowned self] (_) -> Observable<SpotsResponse> in
