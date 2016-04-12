@@ -89,7 +89,7 @@ class SpotsTodayViewController: UIViewController, NCWidgetProviding {
                 }
                 .addDisposableTo(db)
         case .CSUF:
-            getCSUFParkingData(db)
+            getCSUFParkingData()
                 .subscribe { event in
                     self.parseNetworkEvent(event)
                 }

@@ -11,7 +11,6 @@ import RxSwift
 import Moya
 import Moya_ObjectMapper
 import ObjectMapper
-import Kanna
 
 //MARK: - Shared Defaults
 
@@ -27,49 +26,12 @@ func getCUParkingData() -> Observable<SpotsResponse> {
         .mapObject(SpotsResponse)
 }
 
-//TODO: MOVE
-
-func getCSUFParkingData(db : DisposeBag) -> Observable<SpotsResponse> {
-    return Observable<SpotsResponse>.create { obs -> Disposable in
-        CSUFSpotsProvider
-            .request(.Parking)
-            .subscribeNext { response in
-                let dataString = String(data: response.data, encoding: NSUTF8StringEncoding)
-                let doc = Kanna.HTML(html: dataString!, encoding: NSUTF8StringEncoding)!
-                let set = doc.css("tr")
-                var elements : [[String : AnyObject]] = []
-                for element in set where element.text != nil {
-                    let structures = element.text!.characters
-                        .split { $0 == "\r\n" }
-                        .map(String.init)
-                        .filter { !$0.containsString("\t") && !$0.containsString("More") && !$0.containsString("Total") }
-                        .map { $0.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()) }
-                        .filter { $0 != "" }
-                    let name = structures[0]
-                    let lastUpdated = structures[2] as? String
-                    let date = lastUpdated!.dateWithFormat("M/dd/yyyy h:mm:s a", timezone: "PST")
-                    let lastUpdatedISO = date.formattedString("yyyy-MM-dd'T'HH:mm:ss.SSSX", timezone: "UTC")
-                    let available = Int(structures[3])!
-                    let total = Int(structures[1])!
-                    let structure : [String : AnyObject] = [
-                        "name" : name,
-                        "available" : available,
-                        "total" : total,
-                        "lastUpdated" : lastUpdatedISO
-                    ]
-                    elements.append(structure)
-                }
-                let json = [
-                    "structures" : elements
-                ]
-                if let spotsResponse = Mapper<SpotsResponse>().map(json) {
-                    obs.onNext(spotsResponse)
-                }
-                obs.onCompleted()
-            }
-            .addDisposableTo(db)
-        return AnonymousDisposable { }
-    }
+func getCSUFParkingData() -> Observable<SpotsResponse> {
+    return CSUFSpotsProvider
+        .request(.Parking)
+        .flatMapLatest { response in
+            return CSUFParser.parseCSUFData(response.data)
+        }
 }
 
 // MARK: - Provider support
