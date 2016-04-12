@@ -79,7 +79,7 @@ class SpotsTableViewController: UIViewController {
                     return getCUParkingData()
                         .trackActivity(self.activityIndicator)
                 case .CSUF:
-                    return getCSUFParkingData(self.db)
+                    return getCSUFParkingData()
                         .trackActivity(self.activityIndicator)
                 }
             }

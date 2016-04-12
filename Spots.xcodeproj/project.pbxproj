@@ -24,6 +24,8 @@
 		EA2A92811CB240ED00DAC302 /* SpotsAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2A92801CB240ED00DAC302 /* SpotsAppearance.swift */; };
 		EA2A92861CB2654700DAC302 /* SpotsCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2A92851CB2654700DAC302 /* SpotsCircleView.swift */; };
 		EA2A92881CB2670F00DAC302 /* SpotsCircleDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA2A92871CB2670F00DAC302 /* SpotsCircleDataView.xib */; };
+		EA30C3A91CBC7BFC00A37B05 /* CSUFParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA30C3A81CBC7BFC00A37B05 /* CSUFParser.swift */; };
+		EA30C3AA1CBC7D1D00A37B05 /* CSUFParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA30C3A81CBC7BFC00A37B05 /* CSUFParser.swift */; };
 		EAAE9EDF1CB78555008E5D04 /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD83C921CB7596500B44591 /* School.swift */; };
 		EAD83C931CB7596500B44591 /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD83C921CB7596500B44591 /* School.swift */; };
 		EAD83C951CB75CF000B44591 /* SpotsVCType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD83C941CB75CF000B44591 /* SpotsVCType.swift */; };
@@ -122,6 +124,7 @@
 		EA2A92801CB240ED00DAC302 /* SpotsAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotsAppearance.swift; path = SupportingFiles/SpotsAppearance.swift; sourceTree = "<group>"; };
 		EA2A92851CB2654700DAC302 /* SpotsCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotsCircleView.swift; path = Views/SpotsCircleView.swift; sourceTree = "<group>"; };
 		EA2A92871CB2670F00DAC302 /* SpotsCircleDataView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SpotsCircleDataView.xib; path = Views/SpotsCircleDataView.xib; sourceTree = "<group>"; };
+		EA30C3A81CBC7BFC00A37B05 /* CSUFParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CSUFParser.swift; path = Parsing/CSUFParser.swift; sourceTree = "<group>"; };
 		EA675E0C1CB319DC0058C0AB /* Spots.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Spots.entitlements; sourceTree = "<group>"; };
 		EA675E0D1CB31A150058C0AB /* SpotsToday.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SpotsToday.entitlements; sourceTree = "<group>"; };
 		EAD83C921CB7596500B44591 /* School.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = School.swift; path = Models/School.swift; sourceTree = "<group>"; };
@@ -233,6 +236,7 @@
 			children = (
 				EA675E0C1CB319DC0058C0AB /* Spots.entitlements */,
 				EA06CCF71CADF811007F5851 /* AppDelegate.swift */,
+				EA30C3A71CBC7BD300A37B05 /* Parsing */,
 				EA06CD2F1CAE7F03007F5851 /* Models */,
 				EA06CD2B1CAE7A37007F5851 /* Network */,
 				EA06CD2A1CAE009F007F5851 /* Views */,
@@ -316,6 +320,14 @@
 				EAD83C941CB75CF000B44591 /* SpotsVCType.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		EA30C3A71CBC7BD300A37B05 /* Parsing */ = {
+			isa = PBXGroup;
+			children = (
+				EA30C3A81CBC7BFC00A37B05 /* CSUFParser.swift */,
+			);
+			name = Parsing;
 			sourceTree = "<group>";
 		};
 		EAD96EC51CB2846200E1BF73 /* Fonts */ = {
@@ -636,6 +648,7 @@
 				EA06CD2D1CAE7A53007F5851 /* SpotsAPI.swift in Sources */,
 				EAD83C991CB75E2000B44591 /* SpotsNoLevelsTableViewController.swift in Sources */,
 				EAD83C931CB7596500B44591 /* School.swift in Sources */,
+				EA30C3A91CBC7BFC00A37B05 /* CSUFParser.swift in Sources */,
 				EA06CD311CAE7F5B007F5851 /* SpotsResponseModels.swift in Sources */,
 				EAD83C9B1CB7642F00B44591 /* SpotsNoLevelsTableViewCell.swift in Sources */,
 			);
@@ -662,6 +675,7 @@
 				EAD96EFF1CB3023B00E1BF73 /* SpotsAppearance.swift in Sources */,
 				EAD96F071CB308E200E1BF73 /* SpotsTodayCollectionViewCell.swift in Sources */,
 				EAD96EED1CB3018E00E1BF73 /* SpotsTodayViewController.swift in Sources */,
+				EA30C3AA1CBC7D1D00A37B05 /* CSUFParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
