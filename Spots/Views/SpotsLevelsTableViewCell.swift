@@ -28,7 +28,7 @@ class SpotsLevelsTableViewCell: UITableViewCell, UICollectionViewDelegate {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        dataSource.cellFactory = { (model, collectionView, indexPath, level) in
+        dataSource.configureCell = { (model, collectionView, indexPath, level) in
             let structure = model.sectionAtIndex(0).model
             let levelCell : UICollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("LevelCell", forIndexPath: indexPath)
             guard let spotsCircleCollectionCell = levelCell as? SpotsCircleCollectionViewCell else {
@@ -43,7 +43,7 @@ class SpotsLevelsTableViewCell: UITableViewCell, UICollectionViewDelegate {
             
             let level = structure.levels[levelRow]
             spotsCircleCollectionCell.spotsCircleView.countLabel.text = "\(level.available)"
-            spotsCircleCollectionCell.spotsCircleView.titleLabel.text = "LEVEL \(level.name)"
+            spotsCircleCollectionCell.spotsCircleView.titleLabel.text = "\(level.name)".uppercaseString
             spotsCircleCollectionCell.spotsCircleView.spotsCircleView.setCapacityLevel(CGFloat(level.available), outOfTotalCapacity: CGFloat(level.total))
             spotsCircleCollectionCell.spotsCircleView.spotsCircleView.animateCircle(Double(self.indexPath.row) * 0.35 + Double(levelRow) * 0.15)
             

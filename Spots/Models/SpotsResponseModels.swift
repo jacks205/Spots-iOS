@@ -13,31 +13,38 @@ import RxDataSources
 struct SpotsResponse: Mappable {
     
     var structures : [Structure]!
-    var lastUpdated : String!
-    var id : String!
     var lastUpdatedDate : NSDate {
-        return lastUpdated.dateWithFormat("yyyy-MM-dd'T'HH:mm:ss.SSSX", timezone: "UTC")
+        return NSDate()
     }
     
     init?(_ map: Map) { }
     
     mutating func mapping(map: Map) {
-        structures <- map["structures"]
-        lastUpdated <- map["lastUpdatedISO"]
-        id <- map["_id"]
+        structures <- map["Structures"]
     }
 }
 
 struct Structure: Mappable {
     
-    var levels : [Level]!
+    private var _levels : [Level]!
+    var levels : [Level]! {
+        get {
+            if self._levels == nil { return nil }
+            let l = self._levels[1..<self._levels.count]
+            return Array(l)
+        }
+    }
     var available : Int!
     var name : String!
-    var nickname : String!
     var total : Int!
     var lastUpdated : String!
     var lastUpdatedDate : NSDate {
-        return lastUpdated.dateWithFormat("yyyy-MM-dd'T'HH:mm:ss.SSSX", timezone: "UTC")
+        let match = matchesForRegexInText("([0-9]+)", text: lastUpdated)
+        if let firstMatch = match.first,
+            let date = Double(firstMatch) {
+            return NSDate(timeIntervalSince1970: date)
+        }
+        return NSDate()
     }
     
     init?(_ map: Map) { }
@@ -45,12 +52,11 @@ struct Structure: Mappable {
     init() { }
     
     mutating func mapping(map: Map) {
-        levels <- map["levels"]
-        available <- map["available"]
-        name <- map["name"]
-        nickname <- map["nickname"]
-        total <- map["total"]
-        lastUpdated <- map["lastUpdated"]
+        _levels <- map["Levels"]
+        available <- map["CurrentCount"]
+        name <- map["Name"]
+        total <- map["Capacity"]
+        lastUpdated <- map["Timestamp"]
     }
 }
 
@@ -63,9 +69,9 @@ struct Level : Mappable {
     init?(_ map: Map) { }
     
     mutating func mapping(map: Map) {
-        available <- map["available"]
-        name <- map["name"]
-        total <- map["total"]
+        available <- map["CurrentCount"]
+        name <- map["FriendlyName"]
+        total <- map["Capacity"]
     }
     
 }
@@ -171,4 +177,16 @@ public func getDateFormatter(dateFormat : String, timezone : String) -> NSDateFo
     dateFormatter.timeZone = NSTimeZone(abbreviation: timezone)
     dateFormatter.dateFormat = dateFormat
     return dateFormatter
+}
+
+func matchesForRegexInText(regex: String!, text: String!) -> [String] {
+    do {
+        let regex = try NSRegularExpression(pattern: regex, options: [])
+        let nsString = text as NSString
+        let results = regex.matchesInString(text,
+                                            options: [], range: NSMakeRange(0, nsString.length))
+        return results.map { nsString.substringWithRange($0.range)}
+    } catch {
+        return []
+    }
 }

@@ -71,23 +71,6 @@ class SpotsTableViewController: UIViewController {
         refreshControl?.attributedTitle = getLastUpdatedAttributedString("Loading...")
         refreshControl?.beginRefreshing()
         
-        refreshControl?.rx_controlEvent(.ValueChanged)
-            .startWith(())
-            .flatMapLatest { [unowned self] (_) -> Observable<SpotsResponse> in
-                switch self.school {
-                case .CU:
-                    return getCUParkingData()
-                        .trackActivity(self.activityIndicator)
-                case .CSUF:
-                    return getCSUFParkingData()
-                        .trackActivity(self.activityIndicator)
-                }
-            }
-            .subscribe { [unowned self] (event) in
-                self.parseNetworkEvent(event)
-            }
-            .addDisposableTo(db)
-        
         activityIndicator.asObservable()
             .bindTo(refreshControl!.rx_refreshing)
             .addDisposableTo(db)
@@ -137,11 +120,7 @@ class SpotsTableViewController: UIViewController {
         case .Next(let res):
             self.lastUpdated = NSDate()
             self.structures.value = res.structures
-            if res.lastUpdated != nil {
-                self.refreshControl?.attributedTitle = self.getLastUpdatedAttributedString("Updated \(res.lastUpdatedDate.timeAgoString())")
-            } else {
-                self.refreshControl?.attributedTitle = self.getLastUpdatedAttributedString("Updated \(self.lastUpdated.timeAgoString())")
-            }
+            self.refreshControl?.attributedTitle = self.getLastUpdatedAttributedString("Updated \(res.lastUpdatedDate.timeAgoString())")
             break
         case .Error(let err):
             print(err)

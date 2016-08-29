@@ -88,5 +88,5 @@ private func setupFabric() {
     #if DEBUG
         Crashlytics().debugMode = true
     #endif
-    Fabric.with([Crashlytics.self])
+    Fabric.with([Crashlytics.self()])
 }

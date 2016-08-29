@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class SpotsNoLevelsTableViewController: SpotsTableViewController {
 
@@ -20,6 +21,21 @@ class SpotsNoLevelsTableViewController: SpotsTableViewController {
                 cell.lastUpdated.text = "Updated \(structure.lastUpdatedDate.timeAgoString())"
                 cell.percentageCircleDataView.percentageCircleView.setCapacityLevel(CGFloat(structure.available), outOfTotalCapacity: CGFloat(structure.total))
                 cell.percentageCircleDataView.percentageCircleView.animateCircle(Double(row + 1) * 0.15)
+            }
+            .addDisposableTo(db)
+    }
+    
+    override func setupRefreshControl() {
+        super.setupRefreshControl()
+        
+        refreshControl?.rx_controlEvent(.ValueChanged)
+            .startWith(())
+            .flatMapLatest { [unowned self] (_) -> Observable<SpotsResponse> in
+                return getCSUFParkingData()
+                    .trackActivity(self.activityIndicator)
+            }
+            .subscribe { [unowned self] (event) in
+                self.parseNetworkEvent(event)
             }
             .addDisposableTo(db)
     }

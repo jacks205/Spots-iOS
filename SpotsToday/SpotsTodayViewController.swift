@@ -65,7 +65,7 @@ class SpotsTodayViewController: UIViewController, NCWidgetProviding {
         
         preferredContentSize = CGSize(width: 0, height: 173)
         
-        dataSource.cellFactory = { (_, collectionView, indexPath, structure) in
+        dataSource.configureCell = { (_, collectionView, indexPath, structure) in
             guard structure.name != nil else {
                 let cell = collectionView.dequeueReusableCellWithReuseIdentifier("EmptyCell", forIndexPath: indexPath)
                 return cell
@@ -120,12 +120,7 @@ class SpotsTodayViewController: UIViewController, NCWidgetProviding {
             setStructuresDataSource(res)
                 .bindTo(collectionView.rx_itemsWithDataSource(dataSource))
                 .addDisposableTo(self.db)
-            if res.lastUpdated != nil {
-                updatedLabel.text = "Updated \(res.lastUpdatedDate.timeAgoString())"
-            } else {
-                updatedLabel.text = "Updated \(NSDate().timeAgoString())"
-            }
-            
+            updatedLabel.text = "Updated \(res.lastUpdatedDate.timeAgoString())"
             break
         case .Error(let err):
             print(err)

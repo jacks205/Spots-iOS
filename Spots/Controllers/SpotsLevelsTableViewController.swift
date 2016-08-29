@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class SpotsLevelsTableViewController: SpotsTableViewController {
     
@@ -18,6 +19,21 @@ class SpotsLevelsTableViewController: SpotsTableViewController {
                 cell.selectionStyle = .None
                 cell.title.text = structure.name.capitalizedString
                 cell.totalSpots.text = "\(structure.available) spots available"
+            }
+            .addDisposableTo(db)
+    }
+    
+    override func setupRefreshControl() {
+        super.setupRefreshControl()
+        
+        refreshControl?.rx_controlEvent(.ValueChanged)
+            .startWith(())
+            .flatMapLatest { [unowned self] (_) -> Observable<SpotsResponse> in
+                return getCUParkingData()
+                    .trackActivity(self.activityIndicator)
+            }
+            .subscribe { [unowned self] (event) in
+                self.parseNetworkEvent(event)
             }
             .addDisposableTo(db)
     }

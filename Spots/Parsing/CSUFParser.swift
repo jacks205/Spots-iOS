@@ -27,7 +27,7 @@ class CSUFParser {
                         return parseXMLElement(element)
                     }
                 let json = [
-                    "structures" : structures
+                    "Structures" : structures
                 ]
                 if let spotsResponse = Mapper<SpotsResponse>().map(json) {
                     obs.onNext(spotsResponse)
@@ -54,13 +54,13 @@ class CSUFParser {
         let total = Int(structures[1])!
         let lastUpdated = structures[2]
         let date = lastUpdated.dateWithFormat("M/dd/yyyy h:mm:s a", timezone: "PST")
-        let lastUpdatedISO = date.formattedString("yyyy-MM-dd'T'HH:mm:ss.SSSX", timezone: "UTC")
+        let lastUpdatedISO = "/Date(\(Int(date.timeIntervalSince1970))-700)/"
         let available = Int(structures[3])!
         let structure : [String : AnyObject] = [
-            "name" : name,
-            "available" : available,
-            "total" : total,
-            "lastUpdated" : lastUpdatedISO
+            "Name" : name,
+            "CurrentCount" : available,
+            "Capacity" : total,
+            "Timestamp" : lastUpdatedISO
         ]
         return structure
     }

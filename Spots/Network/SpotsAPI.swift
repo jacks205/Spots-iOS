@@ -48,7 +48,7 @@ extension CUSpots : TargetType {
     public var path: String {
         switch self {
         case .Parking:
-            return "/latest-availabilities"
+            return "/parkingservice/parkingservice/counts"
         }
     }
         

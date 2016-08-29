@@ -11,7 +11,7 @@
 
 #define APP_STORE_URL @"itms-apps://itunes.apple.com/us/app/apple-store/id1043748792?mt=8"
 #define SPOTS_SUITE_NAME @"group.com.jacks205.panther"
-#define CHAPMAN_UNIVERSITY_URL @"http://104.236.148.60:8000"
+#define CHAPMAN_UNIVERSITY_URL @"https://webfarm.chapman.edu"
 #define CSUF_URL @"https://parking.fullerton.edu"
 
 #endif /* SpotsConfiguration_h */
