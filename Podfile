@@ -11,6 +11,7 @@ def shared_pods
     pod 'RxCocoa', '2.3.1'
     pod 'RxDataSources'
     pod 'Kanna', '~> 1.0.0'
+    pod 'Firebase/AdMob'
 end
 
 target 'Spots' do

@@ -12,6 +12,7 @@ import RxCocoa
 import Moya
 import Moya_ObjectMapper
 import RxDataSources
+import GoogleMobileAds
 
 let minimumSessions = 4
 let maybeLaterSessions = minimumSessions + 8
@@ -28,16 +29,37 @@ class SpotsTableViewController: UIViewController {
     let db = DisposeBag()
     
     var lastUpdated = NSDate()
+    
+    let bannerView: GADBannerView = {
+        let v = GADBannerView(adSize: kGADAdSizeBanner)
+        v.translatesAutoresizingMaskIntoConstraints = false
+        v.adUnitID = ADMOB_UNIT_ID
+        return v
+    }()
+    
+    let bannerViewHeight: CGFloat = 50.0
+    
+    private var bannerAdRequest: GADRequest {
+        get {
+            let req = GADRequest()
+            #if DEBUG
+                req.testDevices = [kGADSimulatorID]
+            #endif
+            return req
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupAppearance()
         setupTableView()
         setupRefreshControl()
+        setupBannerView()
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        bannerView.loadRequest(bannerAdRequest)
         
         let neverRate = SpotsSharedDefaults.boolForKey("neverRate")
         let totalLaunches = Variable(SpotsSharedDefaults.integerForKey("launches"))
@@ -80,6 +102,19 @@ class SpotsTableViewController: UIViewController {
             .addDisposableTo(db)
         
         tableView.insertSubview(refreshControl!, atIndex: 0)
+    }
+    
+    internal func setupBannerView() {
+        view.addSubview(bannerView)
+        bannerView.rootViewController = self
+        bannerView.bottomAnchor.constraintEqualToAnchor(view.bottomAnchor).active = true
+        bannerView.leftAnchor.constraintEqualToAnchor(view.leftAnchor).active = true
+        bannerView.rightAnchor.constraintEqualToAnchor(view.rightAnchor).active = true
+        bannerView.heightAnchor.constraintEqualToConstant(bannerViewHeight).active = true
+    }
+    
+    override func viewDidLayoutSubviews() {
+        tableView.contentInset.bottom = bannerViewHeight
     }
     
     internal func setupRateAppController(neverRate : Bool, totalLaunches : Variable<Int>) {

@@ -9,6 +9,7 @@
 import UIKit
 import Fabric
 import Crashlytics
+import GoogleMobileAds
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         setupFabric()
+        GADMobileAds.configureWithApplicationID(ADMOB_KEY)
         
         //Check settings bundle
         if let settingsSchoolSelected = NSUserDefaults.standardUserDefaults().stringForKey("SettingsBundleSchoolSelected") {
