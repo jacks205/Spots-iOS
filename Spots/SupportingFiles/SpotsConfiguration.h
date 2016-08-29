@@ -13,5 +13,7 @@
 #define SPOTS_SUITE_NAME @"group.com.jacks205.panther"
 #define CHAPMAN_UNIVERSITY_URL @"https://webfarm.chapman.edu"
 #define CSUF_URL @"https://parking.fullerton.edu"
+#define ADMOB_KEY @"ca-app-pub-2240385250304925~9978382291"
+#define ADMOB_UNIT_ID @"ca-app-pub-2240385250304925/6520308690"
 
 #endif /* SpotsConfiguration_h */
