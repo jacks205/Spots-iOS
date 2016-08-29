@@ -87,8 +87,7 @@ private func setupAppearances() {
 }
 
 private func setupFabric() {
-    #if DEBUG
-        Crashlytics().debugMode = true
-    #endif
+    Fabric.sharedSDK().debug = true
+    Crashlytics().debugMode = true
     Fabric.with([Crashlytics.self()])
 }
