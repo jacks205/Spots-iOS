@@ -1,0 +1,34 @@
+// Auth
+"auth.error.account_exists.body" = "Account already exists with different credentials.";
+"auth.error.email_already_used.body" = "The provided email is already linked to another account.";
+"auth.error.internal_error.body" = "We are experiencing internal issues, please try again later.";
+"auth.error.invalid_email.body" = "Please provide a valid email address.";
+"auth.error.wrong_password.body" = "The password provided is incorrect.";
+"auth.error.weak_password.body" = "Your password should be at least 6 characters.";
+"auth.error.network.body" = "Unable to reach server, network issue.";
+"auth.error.user_not_found.body" = "There is not account with the provided email.";
+"auth.error.generic.body" = "We are currently experiencing issues, please try again later.";
+
+// Registration
+"registration.title" = "Let's get to know each other!";
+"registration.field.name" = "Name";
+"registration.field.email" = "Email";
+"registration.field.password" = "Password";
+"registration.checkbox.terms" = "I agree to the Terms and Conditions";
+"registration.button.primary.title" = "Join!";
+"registration.button.have_account.title" = "I already have an account.";
+
+// Login
+"login.title" = "Welcome Back!";
+"login.field.email" = "Email";
+"login.field.password" = "Password";
+"login.button.primary.title" = "Log In";
+"login.button.no_account.title" = "I don't have an account.";
+
+// Settings
+"settings.title" = "Settings";
+"settings.logout.title" = "Log Out";
+"settings.back.title" = "Back";
+
+// Banners
+"banner.general.title" = "";

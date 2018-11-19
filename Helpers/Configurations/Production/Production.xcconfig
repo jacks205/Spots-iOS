@@ -1,0 +1,13 @@
+#include "../Shared.xcconfig"
+
+// plist
+APIHost = api.io // replace with correct
+Host = google.com
+
+// build settings
+IDENTIFIER_<#app#> = <#app#>PROD
+PRODUCT_<#app#> = <#app#>
+DISPLAY_<#app#> = <#app#> Dev
+
+// preprocessor
+GCC_PREPROCESSOR_DEFINITIONS = ${inherited} <#app#>_PROD=1
